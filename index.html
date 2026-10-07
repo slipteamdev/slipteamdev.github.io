@@ -3,105 +3,198 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raúl Cacho Domínguez - Portfolio</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            background-color: #f4f4f4;
-        }
-
-        header {
-            text-align: center;
-            padding: 30px;
-            background-color: #0078d4;
-            color: white;
-            border-radius: 10px;
-        }
-
-        section {
-            background-color: white;
-            margin-top: 20px;
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        h2 {
-            color: #0078d4;
-        }
-
-        a {
-            color: #0078d4;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            color: #666;
-        }
-    </style>
+    <title>SlipTeam - Split Lands</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
 </head>
 <body>
 
+    <!-- NAVEGACIÓN -->
     <header>
-        <h1>Raúl Cacho Domínguez</h1>
-        <p>Profesor de Ingeniería Informática</p>
-        <p>Bienvenido a mi portfolio.</p>
-        <p>
-            Lanzamiento de GitHub Pages y preparando la asignatura
-            <strong>Juegos para Web y Redes Sociales</strong>.
-        </p>
+        <div class="logo">
+            <!-- Logo del estudio -->
+            <img src="Imagenes/LogoV1.png" alt="Logo del Estudio" width="100" height="auto">
+        </div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#estudio">Sobre Nosotros</a>
+            <a href="#juego">Split Lands</a>
+            <a href="#devlog">Devlog</a>
+            <a href="#marketing">Marketing</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
     </header>
 
-    <section>
-        <h2>Sobre mí</h2>
-        <p>Profesor universitario interesado en:</p>
-        <ul>
-            <li>Desarrollo web</li>
-            <li>Inteligencia Artificial</li>
-            <li>Programación</li>
-            <li>Videojuegos</li>
-        </ul>
+    <!--INICIO (Obligatorio) -->
+    <section id="inicio">
+        <div class="contenedor-video">
+            <video class="video-fondo" src="video2.mp4" autoplay muted loop playsinline></video> <!--video por hacer-->
+            <div class="contenido-banner">
+                <h1>SlipTeam</h1>
+                <p>Diversión y pasión para crear experiencias únicas.</p>
+                <br>
+                <a href="#demo" class="btn-demo">JUEGA A LA DEMO</a> <!--por implementar -->
+            </div>
+        </div>
     </section>
 
-    <section>
-        <h2>Tecnologías</h2>
-        <ul>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>GitHub</li>
-        </ul>
+    <!-- ESTUDIO (Obligatorio) -->
+    <section id="estudio" class="seccion-clara">
+        <h2>Sobre SlipTeam</h2>
+        <div class="contenedor-tarjetas">
+            <div class="tarjeta">
+                <h3>Misión, Visión y Valores</h3>
+                <p>Qué queremos aportar a la industria, dónde queremos llegar como estudio y qué principios guían nuestro trabajo.</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Historia del Proyecto</h3>
+                <p>Nuestro juego comenzó con una equivocación conceptual: Una persona pensó que nuestro nombre era "SplitTeam" en lugar de "SlipTeam", lo que derivó en la división de pantalla como mecánica principal.</p>
+            </div>
+        </div>
+
+        <h3 class="subtitulo">Miembros del Equipo</h3>
+        <div class="grid-miembros">
+            <div class="miembro">
+                <img src="foto1.png" alt="Miembro 1">
+                <h4>Ángel</h4>
+                <p>Programador jefe</p>
+            </div>
+            <div class="miembro">
+                <img src="foto2.png" alt="Miembro 2">
+                <h4>Lucas</h4>
+                <p>Programador y jefe de sonido</p>
+            </div>
+            <div class="miembro">
+                <img src="foto3.png" alt="Miembro 3">
+                <h4>Miguel</h4>
+                <p>Programador y accesibilidad </p>
+            </div>
+            <div class="miembro">
+                <img src="foto4.png" alt="Miembro 4">
+                <h4>Sara</h4>
+                <p>Artista y jefa de planificación, diseño de interfaces.</p>
+            </div>
+            <div class="miembro">
+                <img src="foto5.png" alt="Miembro 5">
+                <h4>Claudia</h4>
+                <p>Jefa de Arte, narración y estimación de tiempos</p>
+            </div>
+            <div class="miembro">
+                <img src="foto6.png" alt="Miembro 6">
+                <h4>Irene</h4>
+                <p>Jefa de animación, arquitectura y coordinación.</p>
+            </div>
+        </div>
     </section>
 
-    <section>
-        <h2>Proyectos</h2>
-        <h3>Portfolio GitHub Pages</h3>
-        <p>Primer portfolio desarrollado utilizando GitHub Pages.</p>
+    <!-- 3. NUESTRO JUEGO (Obligatorio) -->
+    <section id="juego" class="seccion-oscura">
+        <h2>Nuestro Juego</h2>
+        
+        <div class="contenedor-tarjetas">
+            <div class="tarjeta">
+                <h3>Pitch (Descripción corta)</h3>
+                <p>Un emocionante metroidvania donde la luz es tu única arma contra la oscuridad.</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Género y Plataforma</h3>
+                <p><strong>Género:</strong> Acción, Plataformas 2D</p>
+                <p><strong>Plataformas:</strong> PC (Steam, Itch.io)</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Características Principales</h3>
+                <ul>
+                    <li>Combate fluido basado en combos.</li>
+                    <li>Exploración no lineal con secretos.</li>
+                    <li>Estilo de arte pixel art dibujado a mano.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="subtitulo">Capturas y Gameplay</h3>
+        <div class="galeria-capturas">
+            <img src="captura1.png" alt="Captura 1"data-foto="captura1.png" data-texto="Menú principal y HUD">
+            <img src="captura2.png" alt="Captura 2"data-foto="captura2.png" data-texto="Zona del bosque oscuro">
+            <img src="captura3.png" alt="Captura 3" data-foto="captura3.png" data-texto="Combate contra el jefe final">
+        </div>
     </section>
 
-    <section>
-        <h2>Contacto</h2>
-        <p>
-            <a href="ww.linkedin.comLinkedIn</a>
-        </p>
-        <p>
-            https://github.comGitHub</a>
-        </p>
+    <!-- DEVLOG (Recomendable) -->
+    <section id="devlog" class="seccion-clara">
+        <h2>Devlog</h2>
+        <div class="contenedor-tarjetas vertical">
+            <div class="tarjeta">
+                <h3>Hito 1: Prototipo Core</h3>
+                <p>Qué se hizo: Implementación del movimiento del personaje, salto y primera mecánica de ataque básico.</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Hito 2: Arte Alpha</h3>
+                <p>Qué se hizo: Integración de spritesheet principal, fondos parallax y primera versión de la interfaz.</p>
+            </div>
+        </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Raúl Cacho Domínguez</p>
+    <!-- 5. MARKETING (Obligatorio) -->
+    <section id="marketing" class="seccion-oscura">
+        <h2>Marketing</h2>
+        <div class="contenedor-tarjetas">
+            <div class="tarjeta">
+                <h3>Público Objetivo</h3>
+                <p>Jugadores hardcore, amantes de juegos tipo Hollow Knight o Celeste. Rango de edad 15-35 años.</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Juegos Similares</h3>
+                <p>Competencia directa: Blasphemous, Ori and the Blind Forest, Dead Cells.</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Estrategia y Plataformas</h3>
+                <p>Campaña inicial en Twitter y TikTok. Lanzamiento Early Access en <strong>Itch.io</strong>, con miras a un release final en <strong>Steam</strong>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6 y 7. ASPECTOS TÉCNICOS Y RESULTADOS (Recomendables) -->
+    <section id="tecnico-resultados" class="seccion-clara">
+        <h2>Aspectos Técnicos y Resultados</h2>
+        <div class="contenedor-tarjetas">
+            <div class="tarjeta">
+                <h3>Aspectos Técnicos</h3>
+                <p><strong>Programación:</strong> Uso de Scriptable Objects en Unity para gestionar items.</p>
+                <p><strong>Arte:</strong> Aseprite para animaciones cuadro a cuadro.</p>
+                <p><strong>Audio:</strong> FMOD para audio dinámico y espacial.</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Resultados y Feedback</h3>
+                <p><strong>Métricas:</strong> Juego rinde a 60FPS estables en PC de gama baja.</p>
+                <p><strong>Testing:</strong> 20 testers probaron la demo, se corrigió un bug de colisión que dificultaba el salto doble.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EL POPUP PARA LAS FOTOS (Reutilizado de tu código) -->
+    <div id="fondo-popup" class="oculto">
+        <span id="cerrar-popup">&times;</span>
+        <img id="imagen-popup" src="" alt="Popup">
+        <p id="texto-popup"></p>
+    </div>
+
+    <!-- 8. CONTACTO Y RRSS (Obligatorio) -->
+    <footer id="contacto">
+        <h2>Contacto y Redes Sociales</h2>
+        <p>Email del estudio: contacto@nuestroestudio.com</p>
+        <div class="links">
+            <a href="https://twitter.com/">
+                <img src="twitter.png" alt="Twitter" width="50" height="auto">
+            </a>
+            <a href="https://itch.io/">
+                <img src="itchio.png" alt="Itch.io" width="50" height="auto">
+            </a>
+            <a href="https://instagram.com/">
+                <img src="instagram.png" alt="Instagram" width="50" height="auto">
+            </a>
+        </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
