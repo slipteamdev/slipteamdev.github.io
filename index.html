@@ -3,155 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Irene Terrés</title>
-    <link rel="stylesheet" href="style.css">
-    <head>
-    <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
-</head>
+    <title>Raúl Cacho Domínguez - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
 
+        header {
+            text-align: center;
+            padding: 30px;
+            background-color: #0078d4;
+            color: white;
+            border-radius: 10px;
+        }
+
+        section {
+            background-color: white;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #0078d4;
+        }
+
+        a {
+            color: #0078d4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- NAVEGACIÓN SUPERIOR -->
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="Mi logo" width="300" height="auto">
-        </div>
-        <nav>
-            <a href="#grupales">01. Proyectos Grupales</a>
-            <a href="#individuales">02. Proyectos Individuales</a>
-            <a href="#sobremi">03. Sobre mí</a>
-            <a href="#contacto">04. Contacto</a>
-        </nav>
-        <a href="CV_Irene_Terres_Informatica.pdf" class="btn-cv" download>Descarga mi CV</a>
+        <h1>Raúl Cacho Domínguez</h1>
+        <p>Profesor de Ingeniería Informática</p>
+        <p>Bienvenido a mi portfolio.</p>
+        <p>
+            Lanzamiento de GitHub Pages y preparando la asignatura
+            <strong>Juegos para Web y Redes Sociales</strong>.
+        </p>
     </header>
 
-    <section id="banner">
-        <div class="contenedor-video">
-            <video class="video-fondo" src="video2.mp4" autoplay muted loop playsinline></video>
-        </div>
-    </section>
-
-    <!-- PROYECTOS GRUPALES -->
-    <!-- Usamos el id="grupales" para que el menú de arriba te lleve aquí -->
-    <section id="grupales" class="sala-museo">
-        <h2>Proyectos Grupales</h2>
-        
-        <div class="pared-cuadros">
-            <!-- Cuadro 1 -->
-            <div class="cuadro asimetrico-alto">
-                <a href="https://lauraloba.itch.io/future-deja-vu" class="contenedor-lienzo">
-                    <img src="futuredejavu.png" alt="Future Deja Vu" class="imagen-juego">
-                    <img src="unnamed.png" alt="Marco" class="imagen-marco">
-                </a>
-                <p class="cartela">Artista 2D para Assets y algún fondo</p>
-            </div>
-
-            <!-- Cuadro 2 -->
-            <div class="cuadro asimetrico-bajo">
-                <a href="https://lauraloba.itch.io/not-so-day" class="contenedor-lienzo">
-                    <img src="notsoday.png" alt="Not So Day" class="imagen-juego">
-                    <img src="unnamed.png" alt="Marco" class="imagen-marco">
-                </a>
-                <p class="cartela">Artista 2D para Assets y fondos</p>
-            </div>
-
-            <!-- Cuadro 3 -->
-            <div class="cuadro asimetrico-alto">
-                <a href="https://irenetm17.itch.io/gem-legacy" class="contenedor-lienzo">
-                    <img src="gemlegacy.jpg" alt="Gem Legacy" class="imagen-juego">
-                    <img src="unnamed.png" alt="Marco" class="imagen-marco">
-                </a>
-                <p class="cartela">Programadora de patrones como el Observer y artista 2D</p>
-            </div>
-
-            <!-- Cuadro 4 -->
-            <div class="cuadro asimetrico-bajo">
-                <a href="https://irenetm17.itch.io/cosmincare" class="contenedor-lienzo">
-                    <img src="cosmincare.png" alt="CosminCare" class="imagen-juego">
-                    <img src="unnamed.png" alt="Marco" class="imagen-marco">
-                </a>
-                <p class="cartela">Artista 2D pixel art para assets</p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- SALA 2: PROYECTOS INDIVIDUALES -->
-    <section id="individuales" class="sala-museo">
-        <h2>Proyectos Individuales</h2>
-        <div class="pared-cuadros">
-             <!-- Cuadro 1 -->
-            <div class="cuadro asimetrico-alto">
-                <a href="https://irenetm17.itch.io/hells-kitchen" class="contenedor-lienzo">
-                    <img src="hellskitchen.png" alt="Hell's Kitchen" class="imagen-juego">
-                    <img src="unnamed.png" alt="Marco" class="imagen-marco">
-                </a>
-                <p class="cartela">Programadora y artista de todo el proyecto</p>
-            </div>
-
-            <!-- Cuadro 2 (Será una foto en popup) -->
-            <div class="cuadro asimetrico-bajo">
-                <div class="contenedor-lienzo abrir-popup" data-foto="mi-dibujo1.jpg" data-texto="Diseño y animación 3D">
-                    <img src="mi-dibujo1.jpg" alt="Dibujo 1" class="imagen-juego">
-                    <img src="unnamed.png" alt="Marco" class="imagen-marco">
-                </div>
-                <p class="cartela">Diseño 3D y Animación 3D: Aldea Pixie</p>
-            </div> 
-
-            <!-- Cuadro 3 (Será otra foto en popup) -->
-            <div class="cuadro asimetrico-alto">
-                <div class="contenedor-lienzo abrir-popup" data-foto="mi-dibujo2.jpg" data-texto="Character Model Sheet y Escenario">
-                    <img src="mi-dibujo2.jpg" alt="Dibujo 2" class="imagen-juego">
-                    <img src="unnamed.png" alt="Marco" class="imagen-marco">
-                </div>
-                <p class="cartela">Character Model Sheet y Escenario</p>
-            </div>
-        </div>
-        
-            <!-- EL POPUP PARA LAS FOTOS -->
-            <div id="fondo-popup" class="oculto">
-                <span id="cerrar-popup">&times;</span> <!-- La X para cerrar -->
-                <img id="imagen-popup" src="" alt="Popup">
-                <p id="texto-popup"></p>
-            </div>
-
-    </section>
-
-    <!-- SECCIÓN SOBRE MÍ -->
-    <section id="sobremi">
+    <section>
         <h2>Sobre mí</h2>
-        <div class="contenedor-sobremi">
-            <div class="foto">Foto</div>
-            <div class="descripcion">Aquí puedes hablar de tu perfil híbrido como diseñadora/desarrolladora...</div>
-            <div class="estudios">Estudios</div>
-            <div class="habilidades">
-                <h3>Habilidades</h3>
-                <div class="iconos-grid">
-                    <!-- Aquí irán imágenes pequeñitas de Unity, C#, etc. -->
-                    <span class="icono">C</span> 
-                    <span class="icono">C#</span>
-                </div>
-            </div>
-        </div>
+        <p>Profesor universitario interesado en:</p>
+        <ul>
+            <li>Desarrollo web</li>
+            <li>Inteligencia Artificial</li>
+            <li>Programación</li>
+            <li>Videojuegos</li>
+        </ul>
     </section>
 
-    <!-- SECCIÓN DE CONTACTO -->
-    <footer id="contacto">
-        <h2>Contáctame</h2>
-        <p>Correo electrónico: ireneterresfdt@gmail.com</p>
-        <div class="links">
-            <a href="https://www.linkedin.com/in/irene-terr%C3%A9s-mart%C3%ADnez-33a0b82b5/">
-                <img src="linkedin.png" alt="Link a mi Linkedin" width="50" height="auto">
-            </a>
-            <a href="https://github.com/irenetm17">
-                <img src="github.png" alt="Link a mi Github" width="50" height="auto">
-            </a>
-            <a href="https://www.instagram.com/_airingg/">
-                <img src="instagram.png" alt="Link a mi Instagram" width="50" height="auto">
-            </a>
-        </div>
+    <section>
+        <h2>Tecnologías</h2>
+        <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>GitHub</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Proyectos</h2>
+        <h3>Portfolio GitHub Pages</h3>
+        <p>Primer portfolio desarrollado utilizando GitHub Pages.</p>
+    </section>
+
+    <section>
+        <h2>Contacto</h2>
+        <p>
+            <a href="ww.linkedin.comLinkedIn</a>
+        </p>
+        <p>
+            https://github.comGitHub</a>
+        </p>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Raúl Cacho Domínguez</p>
     </footer>
-<script src="script.js"></script>
+
 </body>
 </html>
