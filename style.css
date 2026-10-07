@@ -1,4 +1,3 @@
-/* --- ESTILOS GENERALES --- */
 body {
     font-family: 'Forum', serif;
     margin: 0;
@@ -8,9 +7,9 @@ body {
     scroll-behavior: smooth; 
 }
 
-/* --- EL HEADER FIJO--- */
+/* header- */
 header {
-    background-color: #e2b9a3;
+    background-color: #f4efc9;
     padding: 15px 40px;
     display: flex;
     justify-content: space-between;
@@ -23,7 +22,7 @@ header {
 
 header nav a {
     text-decoration: none;
-    color: #ffffff;
+    color: #264653;
     margin: 0 15px;
     font-weight: bold;
     transition: color 0.3s;
@@ -31,10 +30,10 @@ header nav a {
 }
 
 header nav a:hover {
-    color: #264653; /* Toque de color al pasar el ratón */
+    color: #2a9d8f; 
 }
 
-/* BANNER */
+/* banner */
 #inicio {
     padding: 0; 
     margin: 0;
@@ -58,7 +57,7 @@ header nav a:hover {
     height: 100%;
     object-fit: cover; 
     object-position: center; 
-    opacity: 0.6; /* Oscurecemos un poco el vídeo para que el texto se lea bien */
+    opacity: 0.6;
 }
 
 .contenido-banner {
@@ -95,7 +94,7 @@ header nav a:hover {
     background-color: #E76F51;
 }
 
-/* SECCIONES GENÉRICAS */
+/* secciones */
 section {
     padding: 80px 40px;
     text-align: center;
@@ -125,7 +124,7 @@ h2 {
     margin-bottom: 30px;
 }
 
-/* --- TARJETAS PARA EL CONTENIDO --- */
+/*contenido*/
 .contenedor-tarjetas {
     display: flex;
     justify-content: center;
@@ -154,11 +153,11 @@ h2 {
 }
 
 .contenedor-tarjetas.vertical .tarjeta {
-    width: 80%; /* Para que en el devlog ocupe más espacio */
+    width: 80%; 
     max-width: 800px;
 }
 
-/* --- MIEMBROS DEL EQUIPO --- */
+/* miembros*/
 .grid-miembros {
     display: flex;
     justify-content: center;
@@ -178,7 +177,7 @@ h2 {
     border: 3px solid #E9C46A;
 }
 
-/* --- GALERÍA DE CAPTURAS --- */
+/* capturas modo galeria */
 .galeria-capturas {
     display: flex;
     justify-content: center;
@@ -200,7 +199,7 @@ h2 {
     box-shadow: 0 10px 20px rgba(0,0,0,0.5);
 }
 
-/* --- FOOTER / CONTACTO --- */
+/* footer */
 footer {
     background-color: #0f1c2e;
     padding: 40px;
@@ -228,44 +227,7 @@ footer .links img:hover {
     transform: translateY(-5px);
 }
 
-/* --- POPUP PARA FOTOS --- */
-#fondo-popup {
-    position: fixed; 
-    top: 0; left: 0; width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.9);
-    z-index: 2000;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.oculto {
-    display: none !important;
-}
-
-#imagen-popup {
-    max-width: 90%;
-    max-height: 80vh;
-    border-radius: 5px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-}
-
-#texto-popup {
-    color: #fff;
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-#cerrar-popup {
-    position: absolute;
-    top: 20px; right: 40px;
-    color: white;
-    font-size: 45px;
-    cursor: pointer;
-}
-
-/* --- RESPONSIVO --- */
+/* responsividad*/
 @media screen and (max-width: 768px) {
     header {
         flex-direction: column;
