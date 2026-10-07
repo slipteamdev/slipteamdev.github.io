@@ -1,0 +1,291 @@
+/* --- ESTILOS GENERALES --- */
+body {
+    font-family: 'Forum', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2A9D8F; 
+    color: #f3eef7;
+    scroll-behavior: smooth; 
+}
+
+/* --- EL HEADER FIJO--- */
+header {
+    background-color: #e2b9a3;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+
+header nav a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s;
+    white-space: nowrap;
+}
+
+header nav a:hover {
+    color: #264653; /* Toque de color al pasar el ratón */
+}
+
+/* BANNER */
+#inicio {
+    padding: 0; 
+    margin: 0;
+    width: 100%;
+    height: 80vh; 
+    position: relative;
+    background-color: #000;
+}
+
+.contenedor-video {
+    width: 100%;
+    height: 100%; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-fondo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+    opacity: 0.6; /* Oscurecemos un poco el vídeo para que el texto se lea bien */
+}
+
+.contenido-banner {
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+}
+
+.contenido-banner h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.contenido-banner p {
+    font-size: 1.2em;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.8);
+}
+
+.btn-demo {
+    background-color: #E9C46A;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.btn-demo:hover {
+    background-color: #E76F51;
+}
+
+/* SECCIONES GENÉRICAS */
+section {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.seccion-clara {
+    background-color: #2A9D8F;
+    color: #fff;
+}
+
+.seccion-oscura {
+    background-color: #264653;
+    color: #fff;
+}
+
+h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #E9C46A;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 2em;
+    margin-top: 60px;
+    margin-bottom: 30px;
+}
+
+/* --- TARJETAS PARA EL CONTENIDO --- */
+.contenedor-tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.contenedor-tarjetas.vertical {
+    flex-direction: column;
+    align-items: center;
+}
+
+.tarjeta {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    width: 300px;
+    text-align: left;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.tarjeta h3 {
+    color: #E9C46A;
+    margin-top: 0;
+}
+
+.contenedor-tarjetas.vertical .tarjeta {
+    width: 80%; /* Para que en el devlog ocupe más espacio */
+    max-width: 800px;
+}
+
+/* --- MIEMBROS DEL EQUIPO --- */
+.grid-miembros {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.miembro {
+    text-align: center;
+}
+
+.miembro img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #E9C46A;
+}
+
+/* --- GALERÍA DE CAPTURAS --- */
+.galeria-capturas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.galeria-capturas img {
+    width: 300px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.galeria-capturas img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* --- FOOTER / CONTACTO --- */
+footer {
+    background-color: #0f1c2e;
+    padding: 40px;
+    text-align: center;
+}
+
+footer h2 {
+    color: #E9C46A;
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
+footer .links {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer .links img {
+    transition: transform 0.3s;
+}
+
+footer .links img:hover {
+    transform: translateY(-5px);
+}
+
+/* --- POPUP PARA FOTOS --- */
+#fondo-popup {
+    position: fixed; 
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.oculto {
+    display: none !important;
+}
+
+#imagen-popup {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+#texto-popup {
+    color: #fff;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+#cerrar-popup {
+    position: absolute;
+    top: 20px; right: 40px;
+    color: white;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVO --- */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 15px 20px; 
+        gap: 15px;
+    }
+    header nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .contenido-banner h1 {
+        font-size: 2em;
+    }
+    .tarjeta {
+        width: 100%;
+        box-sizing: border-box;
+    }
+    section {
+        padding: 50px 20px;
+    }
+}
