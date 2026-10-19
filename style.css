@@ -33,6 +33,23 @@ header nav a:hover {
     color: #2a9d8f; 
 }
 
+.btn-navigation {
+    color: rgb(10, 10, 10);
+    text-decoration: solid;
+    font-size: 1.4em;
+    padding: 15px 10px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: 0.1s;
+}
+
+.btn-navigation:hover {
+    color: rgb(25, 5, 5);
+    font-size: 1.6em;
+    text-shadow: 0 0 10px 10px #e99072;
+    transition: 0.1s;
+}
+
 /* banner */
 #inicio {
     padding: 0; 
@@ -79,19 +96,23 @@ header nav a:hover {
 
 .btn-demo {
     background-color: #E9C46A;
-    color: white;
+    color: rgb(10, 10, 10);
     padding: 15px 30px;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.4em;
     font-weight: bold;
     border-radius: 5px;
-    transition: background 0.3s;
     display: inline-block;
     margin-top: 20px;
+    transition: 0.3s;
+    box-shadow: 0 0 1.1em #E9C46A;
 }
 
 .btn-demo:hover {
-    background-color: #E76F51;
+    background-color: #ee7f63;
+    color: rgb(251, 255, 233);
+    font-size: 1.6em;
+    transition: 0.1s;
 }
 
 /* secciones */
