@@ -221,7 +221,7 @@ h2 {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    width: 300px;
+    width: 40%;
     text-align: left;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -230,6 +230,12 @@ h2 {
     color: #f0d79a;
     margin-top: 0;
     font-size: 3em;
+}
+
+.tarjeta h4 {
+    margin-top: 0;
+    font-size: 1.5em;
+    font-style: normal;
 }
 
 .contenedor-tarjetas.vertical .tarjeta {
@@ -321,7 +327,7 @@ footer .links {
 }
 
 footer .links img {
-    transition: transform 0.3s;
+    transition: transform 0.1s;
 }
 
 footer .links img:hover {
