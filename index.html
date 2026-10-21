@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SlipTeam - Split Lands</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="images/logos/pfp.png">
 </head>
+
 <body>
 
     <!-- NAVEGACIÓN -->
     <header>
         <div class="logo">
             <!-- Logo del estudio -->
-            <img src="Imagenes/LogoV0.png" alt="Logo del Estudio" width="50" height="auto">
+            <img src="images/logos/pfp.png" alt="Logo del Estudio" width="50" height="auto">
         </div>
         <nav>
             <a class="btn-navigation" href="#inicio">Inicio</a>
@@ -28,70 +31,76 @@
     <!--INICIO (Obligatorio) -->
     <section id="inicio">
         <div class="contenedor-video">
-            <video class="video-fondo" src="video2.mp4" autoplay muted loop playsinline></video> <!--video por hacer-->
+            <video class="video-fondo" src="videos/TEMP.mp4" autoplay muted loop playsinline></video>
+            <!--video por hacer-->
             <div class="contenido-banner">
-                <video src="Videos/LogoV1Animacion.mp4" autoplay muted alt="Logo del Estudio" width="600" height="auto">
+                <video src="videos/logo_name.webm" style="width: 80%; height: auto;" autoplay muted playsinline></video>
                 <br>
                 <h2><b>Diversión y pasión para crear experiencias únicas</b></h2>
                 <br>
-                <a href="#demo" class="btn-demo">JUEGA A LA DEMO</a> <!--por implementar -->
+                <a href="#demo" class="btn-demo">JUEGA LA DEMO AHORA</a> <!--por implementar -->
             </div>
         </div>
     </section>
 
     <!-- ESTUDIO (Obligatorio) -->
     <section id="estudio" class="seccion-clara">
-        <h2>Sobre SlipTeam</h2>
-        <div class="contenedor-tarjetas">
-            <div class="tarjeta">
-                <h3>Misión, Visión y Valores</h3>
-                <p>Qué queremos aportar a la industria, dónde queremos llegar como estudio y qué principios guían nuestro trabajo.</p>
-            </div>
-            <div class="tarjeta">
-                <h3>Historia del Proyecto</h3>
-                <p>Nuestro juego comenzó con una equivocación conceptual: Una persona pensó que nuestro nombre era "SplitTeam" en lugar de "SlipTeam", lo que derivó en la división de pantalla como mecánica principal.</p>
-            </div>
-        </div>
-
+        <h1>Sobre Nosotros</h1>
+        
         <h3 class="subtitulo">Miembros del Equipo</h3>
         <div class="grid-miembros">
             <div class="miembro">
-                <img src="foto1.png" alt="Miembro 1">
+                <img src="images/members/angel.png" alt="Ángel">
                 <h4>Ángel</h4>
-                <p>Jefe de programación y Arquitectura.</p>
+                <h3>Jefe de programación y Arquitectura</h3>
             </div>
             <div class="miembro">
-                <img src="foto2.png" alt="Miembro 2">
+                <img src="images/members/lucas.png" alt="Lucas">
                 <h4>Lucas</h4>
-                <p>Programador y Jugabilidad</p>
+                <h3>Programador y Jugabilidad</h3>
             </div>
             <div class="miembro">
-                <img src="foto3.png" alt="Miembro 3">
+                <img src="images/members/miguel.png" alt="Miguel">
                 <h4>Miguel</h4>
-                <p>Programador y Jefe de Accesibilidad. </p>
+                <h3>Programador y Jefe de Accesibilidad</h3>
             </div>
             <div class="miembro">
-                <img src="foto4.png" alt="Miembro 4">
+                <img src="images/members/sara.png" alt="Sara">
                 <h4>Sara</h4>
-                <p>Jefa de Arte, Planificación e Interfaces.</p>
+                <h3>Jefa de Arte, Planificación e Interfaces</h3>
             </div>
             <div class="miembro">
-                <img src="foto5.png" alt="Miembro 5">
+                <img src="images/members/claudia.png" alt="Claudia">
                 <h4>Claudia</h4>
-                <p>Arte, Animación, Jefa de Narración.</p>
+                <h3>Arte, Animación, Jefa de Narración</h3>
             </div>
             <div class="miembro">
-                <img src="foto6.png" alt="Miembro 6">
+                <img src="images/members/irene.png" alt="Irene">
                 <h4>Irene</h4>
-                <p>Jefa de Animación, Arte y Coordinación.</p>
+                <h3>Jefa de Animación, Arte y Coordinación</h3>
             </div>
         </div>
+
+        <div class="contenedor-tarjetas">
+            <div class="tarjeta">
+                <h3>Misión, Visión y Valores</h3>
+                <p>Qué queremos aportar a la industria, dónde queremos llegar como estudio y qué principios guían
+                    nuestro trabajo.</p>
+            </div>
+            <div class="tarjeta">
+                <h3>Historia del Proyecto</h3>
+                <p>Nuestro juego comenzó con una equivocación conceptual: Una persona pensó que nuestro nombre era
+                    "SplitTeam" en lugar de "SlipTeam", lo que derivó en la división de pantalla como mecánica
+                    principal.</p>
+            </div>
+        </div>
+
     </section>
 
     <!-- NUESTRO JUEGO (Obligatorio) -->
     <section id="juego" class="seccion-oscura">
         <h2>Nuestro Juego: Split Lands</h2>
-        
+
         <div class="contenedor-tarjetas">
             <div class="tarjeta">
                 <h3>Pitch </h3>
@@ -114,8 +123,8 @@
 
         <h3 class="subtitulo">Capturas y Gameplay</h3>
         <div class="galeria-capturas">
-            <img src="captura1.png" alt="Captura 1"data-foto="captura1.png" data-texto="Menú principal y HUD">
-            <img src="captura2.png" alt="Captura 2"data-foto="captura2.png" data-texto="Zona del bosque oscuro">
+            <img src="captura1.png" alt="Captura 1" data-foto="captura1.png" data-texto="Menú principal y HUD">
+            <img src="captura2.png" alt="Captura 2" data-foto="captura2.png" data-texto="Zona del bosque oscuro">
             <img src="captura3.png" alt="Captura 3" data-foto="captura3.png" data-texto="Combate contra el jefe final">
         </div>
     </section>
@@ -199,4 +208,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
