@@ -17,12 +17,17 @@
             <!-- Logo del estudio -->
             <img src="images/logos/pfp.png" alt="Logo del Estudio" width="50" height="auto">
         </div>
-        <nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <nav id="nav-menu">
             <a class="btn-navigation" href="#inicio">Inicio</a>
-            <a class="btn-navigation" href="#estudio">Sobre Nosotros</a>
             <a class="btn-navigation" href="#juego">Split Lands</a>
             <a class="btn-navigation" href="#devlog">Devlog</a>
             <a class="btn-navigation" href="#marketing">Marketing</a>
+            <a class="btn-navigation" href="#estudio">Sobre Nosotros</a>
             <a class="btn-navigation" href="#contacto">Contacto</a>
         </nav>
     </header>
@@ -33,11 +38,94 @@
             <video class="video-fondo" src="videos/TEMP.mp4" autoplay muted loop playsinline></video>
             <!--video por hacer-->
             <div class="contenido-banner">
-                <video src="videos/logo_name.webm" style="width: 80%; height: auto;" autoplay muted playsinline></video>
+                <video src="videos/logo_name.webm" style="width: 80%; height: auto; max-width: 600px;" autoplay muted playsinline></video>
                 <br>
                 <h2><b>Diversión y pasión por crear experiencias únicas</b></h2>
                 <br>
                 <a href="#demo" class="btn-demo">JUEGA LA DEMO AHORA</a> <!--por implementar -->
+            </div>
+        </div>
+    </section>
+
+    <!-- NUESTRO JUEGO (Obligatorio) -->
+    <section id="juego" class="seccion-oscura">
+        <h1>Split Lands</h1>
+
+        <div class="contenedor-tarjetas">
+            <div class="tarjeta">
+                <h3>Pitch </h3>
+                <h4>Blablablabla</h4>
+            </div>
+            <div class="tarjeta">
+                <h3>Género y Plataforma</h3>
+                <h4><strong>Género:</strong> Party, Competitivo, 2D</h4>
+                <h4><strong>Plataformas:</strong> PC (Web)</h4>
+            </div>
+            <div class="tarjeta">
+                <h3>Características Principales</h3>
+                <ul>
+                    <li>Blablablabla.</li>
+                    <li>Blablablabla.</li>
+                    <li>Blablablabla.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 class="subtitulo">Capturas y Gameplay</h3>
+        <div class="galeria-capturas">
+            <img src="captura1.png" alt="Captura 1" data-foto="captura1.png" data-texto="Menú principal y HUD">
+            <img src="captura2.png" alt="Captura 2" data-foto="captura2.png" data-texto="Zona del bosque oscuro">
+            <img src="captura3.png" alt="Captura 3" data-foto="captura3.png" data-texto="Combate contra el jefe final">
+        </div>
+    </section>
+
+    <!-- DEVLOG (Recomendable) -->
+    <section id="devlog" class="seccion-clara">
+        <h1>Devlog</h1>
+        <div class="contenedor-tarjetas vertical">
+            <div class="tarjeta">
+                <h3>Hito 1</h3>
+                <h4>Blablablabla.</h4>
+            </div>
+            <div class="tarjeta">
+                <h3>Hito 2</h3>
+                <h4>Blablablabla.</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARKETING (Obligatorio) -->
+    <section id="marketing" class="seccion-oscura">
+        <h1>Marketing</h1>
+        <div class="contenedor-tarjetas">
+            <div class="tarjeta">
+                <h3>Público Objetivo</h3>
+                <h4>Blablablabla</h4>
+            </div>
+            <div class="tarjeta">
+                <h3>Juegos Similares</h3>
+                <h4>Blablablabla</h4>
+            </div>
+            <div class="tarjeta">
+                <h3>Estrategia y Plataformas</h3>
+                <h4>Blablablabla</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- ASPECTOS TÉCNICOS Y RESULTADOS (Recomendables) -->
+    <section id="tecnico-resultados" class="seccion-clara">
+        <h1>Aspectos Técnicos y Resultados</h1>
+        <div class="contenedor-tarjetas">
+            <div class="tarjeta">
+                <h3>Aspectos Técnicos</h3>
+                <h4><strong>Programación:</strong> Blablablabla.</h4>
+                <h4><strong>Arte:</strong> Blablablabla.</h4>
+                <h4><strong>Audio:</strong> Blablablabla.</h4>
+            </div>
+            <div class="tarjeta">
+                <h3>Resultados y Feedback</h3>
+                <h4>Blablablabla.</h4>
             </div>
         </div>
     </section>
@@ -96,89 +184,6 @@
 
     </section>
 
-    <!-- NUESTRO JUEGO (Obligatorio) -->
-    <section id="juego" class="seccion-oscura">
-        <h1>Split Lands</h1>
-
-        <div class="contenedor-tarjetas">
-            <div class="tarjeta">
-                <h3>Pitch </h3>
-                <p>Blablablabla</p>
-            </div>
-            <div class="tarjeta">
-                <h3>Género y Plataforma</h3>
-                <p><strong>Género:</strong> Party, Competitivo, 2D</p>
-                <p><strong>Plataformas:</strong> PC (Web))</p>
-            </div>
-            <div class="tarjeta">
-                <h3>Características Principales</h3>
-                <ul>
-                    <li>Blablablabla.</li>
-                    <li>Blablablabla.</li>
-                    <li>Blablablabla.</li>
-                </ul>
-            </div>
-        </div>
-
-        <h3 class="subtitulo">Capturas y Gameplay</h3>
-        <div class="galeria-capturas">
-            <img src="captura1.png" alt="Captura 1" data-foto="captura1.png" data-texto="Menú principal y HUD">
-            <img src="captura2.png" alt="Captura 2" data-foto="captura2.png" data-texto="Zona del bosque oscuro">
-            <img src="captura3.png" alt="Captura 3" data-foto="captura3.png" data-texto="Combate contra el jefe final">
-        </div>
-    </section>
-
-    <!-- DEVLOG (Recomendable) -->
-    <section id="devlog" class="seccion-clara">
-        <h1>Devlog</h1>
-        <div class="contenedor-tarjetas vertical">
-            <div class="tarjeta">
-                <h3>Hito 1</h3>
-                <p>Blablablabla.</p>
-            </div>
-            <div class="tarjeta">
-                <h3>Hito 2</h3>
-                <p>Blablablabla.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- MARKETING (Obligatorio) -->
-    <section id="marketing" class="seccion-oscura">
-        <h1>Marketing</h1>
-        <div class="contenedor-tarjetas">
-            <div class="tarjeta">
-                <h3>Público Objetivo</h3>
-                <p>Blablablabla</p>
-            </div>
-            <div class="tarjeta">
-                <h3>Juegos Similares</h3>
-                <p>Blablablabla</p>
-            </div>
-            <div class="tarjeta">
-                <h3>Estrategia y Plataformas</h3>
-                <p>Blablablabla</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ASPECTOS TÉCNICOS Y RESULTADOS (Recomendables) -->
-    <section id="tecnico-resultados" class="seccion-clara">
-        <h1>Aspectos Técnicos y Resultados</h1>
-        <div class="contenedor-tarjetas">
-            <div class="tarjeta">
-                <h3>Aspectos Técnicos</h3>
-                <p><strong>Programación:</strong> Blablablabla.</p>
-                <p><strong>Arte:</strong> Blablablabla.</p>
-                <p><strong>Audio:</strong> Blablablabla.</p>
-            </div>
-            <div class="tarjeta">
-                <h3>Resultados y Feedback</h3>
-                <p>Blablablabla.</p>
-            </div>
-        </div>
-    </section>
-
     <!--CONTACTO (Obligatorio) -->
     <footer id="contacto">
         <h2>Contacto y Redes Sociales</h2>
@@ -207,7 +212,7 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="code.js"></script>
 </body>
 
 </html>

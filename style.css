@@ -20,6 +20,12 @@ header {
     z-index: 1000;
 }
 
+nav {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
 header nav a {
     text-decoration: none;
     color: #264653;
@@ -37,20 +43,33 @@ header nav a:hover {
     color: rgb(10, 10, 10);
     text-decoration: solid;
     font-size: 1.4em;
-    padding: 15px 10px;
+    padding: 10px 20px;
+    margin: 5px 0px;
     border-radius: 10px;
     display: inline-block;
     font-weight: bold;
-    transition: 0.1s;
+    transition: all 0.3s ease;
 }
 
 .btn-navigation:hover {
     background-color: #f38f4d;
-    color: rgb(25, 5, 5);
-    font-size: 1.6em;
-    text-shadow: 0 0 10px 10px #e99072;
-    font-weight: bolder;
-    transition: 0.1s;
+    color: #fff;
+    transform: translateY(-4px);
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #264653;
+    margin: 4px 0;
+    transition: 0.3s;
+    border-radius: 2px;
 }
 
 /* banner */
@@ -58,9 +77,9 @@ header nav a:hover {
     padding: 0;
     margin: 0;
     width: 100%;
-    height: 80vh;
+    height: 100vh;
     position: relative;
-    background-color: #000;
+    background-color: #0f1c2e;
 }
 
 .contenedor-video {
@@ -70,13 +89,13 @@ header nav a:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .video-fondo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
     opacity: 0.6;
 }
 
@@ -84,6 +103,7 @@ header nav a:hover {
     position: absolute;
     text-align: center;
     z-index: 10;
+    padding: 20px;
 }
 
 
@@ -127,7 +147,7 @@ header nav a:hover {
     border-radius: 5px;
     display: inline-block;
     margin-top: 20px;
-    transition: 0.3s;
+    transition: all 0.3s ease;
     box-shadow: 0 0 1.1em #E9C46A;
     animation-name: "demo_button_idle";
     animation-duration: .5s;
@@ -181,6 +201,7 @@ h1 {
     font-size: 5em;
     margin: 0px 0px;
     display: inline-block;
+    position: relative;
     padding-bottom: 10px;
     animation-name: "h1_idle";
     animation-duration: 1s;
@@ -237,18 +258,21 @@ h2 {
     font-size: 1.5em;
     font-style: normal;
 }
-
-.contenedor-tarjetas.vertical .tarjeta {
-    width: 80%;
-    max-width: 800px;
-}
-
 /* miembros*/
 .grid-miembros {
     display: flex;
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
+}
+
+.miembro {
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.miembro:hover {
+    transform: scale(1.1);
 }
 
 @keyframes miembro_idle {
@@ -324,6 +348,7 @@ footer .links {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 footer .links img {
@@ -335,11 +360,34 @@ footer .links img:hover {
 }
 
 /* responsividad*/
-@media screen and (max-width: 768px) {
-    header {
+@media screen and (max-width: 990px) {
+    h1 { font-size: 3em; }
+    
+    .menu-toggle { display: flex; }
+
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #f4efc9;
         flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.2s ease-in-out;
+    }
+    nav.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         padding: 15px 20px;
-        gap: 15px;
     }
 
     header nav {
@@ -359,6 +407,6 @@ footer .links img:hover {
     }
 
     section {
-        padding: 50px 20px;
+        padding: 80px 20px 60px;
     }
 }
