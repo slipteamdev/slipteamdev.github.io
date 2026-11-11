@@ -1,5 +1,5 @@
 /* ==========================================================================
-   VARIABLES DE IDENTIDAD VISUAL Y DE MARCA (SLIP TEAM)
+   VARIABLES DE COLORES SEGÚN LA IDENTIDAD VISUAL
    ========================================================================== */
 :root {
     --charcoal-blue: #264653;
@@ -33,6 +33,7 @@ body {
     line-height: 1.6;
 }
 
+/* Barra que se  mueve con un degradado según avanzas */
 #scroll-progress {
     position: fixed;
     top: 0;
@@ -44,9 +45,8 @@ body {
     transition: width 0.1s ease-out;
 }
 
-/* ==========================================================================
-   HEADER Y NAVEGACIÓN
-   ========================================================================== */
+/**/
+
 header {
     background-color: var(--cream-bg);
     padding: 12px 40px;
@@ -169,19 +169,7 @@ nav {
     margin: 0 auto;
 }
 
-.eyebrow {
-    display: inline-block;
-    font-family: var(--font-rounded);
-    background-color: rgba(42, 157, 143, 0.95);
-    color: #fff;
-    padding: 6px 18px;
-    border-radius: 999px;
-    font-size: 0.95rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-    border: 2px solid var(--jasmine);
-}
+
 
 .logo-video {
     width: 75%;
@@ -1060,13 +1048,139 @@ h1 {
 }
 
 /* ==========================================================================
+   FORMULARIO DE CONTACTO Y PLAYTESTING (FOOTER)
+   ========================================================================== */
+.form-split {
+    width: 100%;
+    max-width: 780px;
+    margin: 10px auto 35px;
+    background: rgba(38, 70, 83, 0.55);
+    border: 2px solid rgba(233, 196, 106, 0.45);
+    border-radius: 20px;
+    padding: 32px;
+    text-align: left;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(8px);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 16px;
+}
+
+.form-grupo label {
+    font-family: var(--font-rounded);
+    color: var(--jasmine);
+    font-size: 1.05rem;
+}
+
+.form-grupo input[type="text"],
+.form-grupo input[type="email"],
+.form-grupo select,
+.form-grupo textarea {
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    padding: 12px 15px;
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(15, 28, 46, 0.85);
+    color: var(--text-light);
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+    border-color: var(--verdigris);
+    box-shadow: 0 0 12px rgba(42, 157, 143, 0.45);
+}
+
+.range-box {
+    background: rgba(15, 28, 46, 0.6);
+    padding: 14px 18px;
+    border-radius: 12px;
+    border: 1px dashed rgba(233, 196, 106, 0.4);
+}
+
+.range-box output {
+    color: var(--sandy-brown);
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+.range-box input[type="range"] {
+    width: 100%;
+    accent-color: var(--burnt-peach);
+    cursor: pointer;
+}
+
+.form-acciones {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-enviar-form {
+    font-family: var(--font-rounded);
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: linear-gradient(135deg, var(--verdigris), #1f7a6f);
+    color: #fff;
+    padding: 14px 34px;
+    border: 2px solid var(--jasmine);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-enviar-form:hover {
+    background: linear-gradient(135deg, var(--burnt-peach), var(--sandy-brown));
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(231, 111, 81, 0.4);
+}
+
+.respuesta-form {
+    margin-top: 18px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    background-color: rgba(42, 157, 143, 0.25);
+    border: 2px solid var(--verdigris);
+    color: var(--cream-bg);
+    text-align: center;
+    font-size: 1.15rem;
+}
+
+.respuesta-form.oculto {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+    .form-split {
+        padding: 22px 18px;
+    }
+}
+
+/* ==========================================================================
    FOOTER Y CONTACTO
    ========================================================================== */
 footer {
     background-color: var(--dark-navy);
-    padding: 60px 30px 40px;
+    padding: 80px 30px 40px;
     text-align: center;
     border-top: 4px solid var(--jasmine);
+    min-height: 20px;
 }
 
 footer h2 {
@@ -1135,6 +1249,17 @@ footer .links img:hover {
     color: rgba(255,255,255,0.6);
 }
 
+/* Estilo para el texto de carga del widget de X (Twitter) */
+.twitter-wrapper a.twitter-timeline {
+    color: var(--jasmine);
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1.2rem;
+    font-family: var(--font-rounded);
+}
+
 /* ==========================================================================
    ANIMACIONES SCROLL REVEAL Y RESPONSIVE
    ========================================================================== */
@@ -1153,21 +1278,44 @@ footer .links img:hover {
     h1 { font-size: 2.5rem; }
     .menu-toggle { display: flex; }
 
-    nav {
+    header nav {
         position: absolute;
         top: 100%;
         left: 0;
         width: 100%;
-        background-color: var(--cream-bg);
-        flex-direction: column;
-        padding: 20px 0;
-        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        background-color: rgba(244, 239, 201, 0.98);
+        backdrop-filter: blur(10px);
+        /* Cuadrícula compacta de 2 columnas para que no ocupe toda la pantalla */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px 14px;
+        padding: 18px 24px;
+        border-bottom: 4px solid var(--burnt-peach);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
         clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
         transition: clip-path 0.25s ease-in-out;
     }
 
-    nav.active {
+    /* ¡ESTA REGLA ES VITAL PARA QUE SE ABRA EL MENÚ AL HACER CLIC! */
+    header nav.active {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+
+    /* Cajitas ordenadas para cada botón en móvil/pantalla dividida */
+    header nav .btn-navigation {
+        text-align: center;
+        width: 100%;
+        padding: 10px 12px;
+        margin: 0;
+        background-color: rgba(38, 70, 83, 0.08);
+        border: 1px solid rgba(38, 70, 83, 0.15);
+    }
+
+    header nav .btn-navigation.activo,
+    header nav .btn-navigation:hover {
+        background-color: var(--burnt-peach);
+        color: #fff;
+        transform: none;
     }
 
     .ficha-personaje {

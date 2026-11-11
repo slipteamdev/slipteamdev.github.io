@@ -66,14 +66,14 @@ const datosPersonajes = {
         bioma: 'Bioma: Bosque · Mamífero',
         nombre: 'ROBIN',
         personalidad: 'Personalidad: Astuto, atrevido y energético.',
-        desc: 'Maestro del combate cuerpo a cuerpo. Sus golpes de corto alcance cubren un gran ángulo semicircular para reclamar amplias zonas del mapa.',
+        desc: 'Maestro del combate cuerpo a cuerpo. Sus golpes de corto alcance cubren un ángulo semicircular para reclamar zonas del mapa.',
         vel: 65, area: 95, ctrl: 70,
         basicaT: 'Zarpazo Semicircular',
         basicaD: 'Golpe cuerpo a cuerpo de velocidad pausada pero gran radio frontal, ideal para pintar extensas áreas de terreno.',
         especialT: 'Dash N\' Splash',
         especialD: 'Impulso veloz hacia delante que pinta por donde pasa y culmina con un estallido de pintura y daño en área.',
         ultiT: 'Instinto Salvaje',
-        ultiD: 'Transformación temporal que potencia drásticamente la velocidad de movimiento y el alcance de todas sus habilidades.'
+        ultiD: 'Transformación temporal que potencia drásticamente la velocidad y el alcance sus habilidades.'
     },
     tuqui: {
         img: 'assets/images/characters/tuqui.png',
@@ -100,11 +100,11 @@ const datosPersonajes = {
         basicaD: 'Cae de golpe contra el suelo para expandir una gran onda circular de pintura a su alrededor.',
         especialT: 'Aura Paralizante',
         especialD: 'Despliega un círculo mágico que se mueve con ella; si el rival entra en su radio, queda inmovilizado durante varios segundos.',
-        ultiT: 'Polvo de Confusión Cósmica',
-        ultiD: 'Invierte los controles del jugador rival y reduce tanto su velocidad de desplazamiento como la recarga de sus habilidades.'
+        ultiT: 'Polvo de Confusión',
+        ultiD: 'Invierte los controles del rival y reduce tanto su velocidad como la recarga de sus habilidades.'
     }
 };
-
+//la magia para cambiar lo de la ficha del personaje
 document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -149,7 +149,8 @@ botonesFiltro.forEach(btn => {
 });
 
 // ==========================================================================
-// 4. CONMUTADOR DE ESQUEMAS DE CONTROL (WASD / ARROWS / GAMEPAD)
+// 4. ESQUEMAS DE CONTROL (WASD / ARROWS / GAMEPAD)
+//segun lo que eliga, se pone unos datos u otros (por defecto están el wasd)
 // ==========================================================================
 const esquemasControl = {
     wasd:    { mov: 'W A S D', bas: 'Tecla F', esp: 'Tecla G', ult: 'Tecla H', pau: 'Espacio' },
@@ -213,7 +214,7 @@ document.querySelectorAll('.tilt-card').forEach(card => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        card.style.transform = `perspective(900px) rotateX(${(-y / 32).toFixed(2)}deg) rotateY(${(x / 32).toFixed(2)}deg) translateY(-4px)`;
+        card.style.transform = `perspective(900px) rotateX(${(-y / 64).toFixed(2)}deg) rotateY(${(x / 32).toFixed(2)}deg) translateY(-4px)`;
     });
     card.addEventListener('mouseleave', () => {
         card.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) translateY(0)';
@@ -226,3 +227,50 @@ btnCopiar.addEventListener('click', () => {
     btnCopiar.textContent = '✅ ¡Copiado!';
     setTimeout(() => { btnCopiar.textContent = '📋 Copiar correo'; }, 2000);
 });
+
+// ==========================================================================
+// 7. FORMULARIO INTERACTIVO DE PLAYTESTING Y FEEDBACK (CON LOCALSTORAGE)
+// ==========================================================================
+const inputHype = document.getElementById('nota-hype');
+const outputHype = document.getElementById('valor-hype');
+const formContacto = document.getElementById('form-contacto');
+const respuestaForm = document.getElementById('respuesta-form');
+
+if (inputHype && outputHype) {
+    inputHype.addEventListener('input', () => {
+        const v = Number(inputHype.value);
+        let emoji = '🔥 ¡Puro Caos!';
+        if (v <= 4) emoji = '🌱 Puede mejorar';
+        else if (v <= 7) emoji = '🎮 ¡Muy entretenido!';
+        else if (v <= 9) emoji = '⚡ ¡Súper frenético!';
+        outputHype.textContent = `${v} / 10 ${emoji}`;
+    });
+}
+
+if (formContacto) {
+    formContacto.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        const nombre = document.getElementById('nombre-usuario').value.trim();
+        const email = document.getElementById('email-usuario').value.trim();
+        const motivo = document.getElementById('motivo-contacto').value;
+        const campeon = document.getElementById('campeon-fav').value || 'Sin especificar';
+        const hype = inputHype ? inputHype.value : '10';
+        const mensaje = document.getElementById('mensaje-usuario').value.trim();
+
+        // Guardamos en localStorage para demostrar uso de API Web Storage de HTML5
+        const registro = { nombre, email, motivo, campeon, hype, mensaje, fecha: new Date().toLocaleDateString() };
+        localStorage.setItem('slipteam_ultimo_feedback', JSON.stringify(registro));
+
+        // Mostramos confirmación interactiva sin recargar la página
+        respuestaForm.classList.remove('oculto');
+        respuestaForm.innerHTML = `
+            <strong>✅ ¡Gracias por tu mensaje, ${nombre}!</strong><br>
+            Hemos registrado tu <em>${motivo}</em> (Campeón: <strong>${campeon}</strong> · Valoración: <strong>${hype}/10</strong>).<br>
+            <small>También puedes <a href="mailto:slipteamdev@gmail.com?subject=${encodeURIComponent(motivo + ' - ' + nombre)}&body=${encodeURIComponent('Campeón favorito: ' + campeon + '\nValoración: ' + hype + '/10\n\nMensaje:\n' + mensaje)}" style="color: #E9C46A; font-weight: bold;">hacer clic aquí para enviarlo directamente desde tu gestor de correo</a>.</small>
+        `;
+
+        formContacto.reset();
+        outputHype.textContent = '10 / 10 🔥 ¡Puro Caos!';
+    });
+}
