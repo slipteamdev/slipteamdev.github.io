@@ -4,27 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SlipTeam - Split Lands</title>
+    <title>Slip Team - Split Lands | Portfolio Oficial</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Forum&family=Sniglet:wght@400;800&family=Titan+One&display=swap" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="assets/images/logos/pfp.png">
 </head>
 
 <body>
-    <!-- NAVEGACIÓN -->
+    <!-- Barra superior de progreso de lectura -->
+    <div id="scroll-progress"></div>
+
+    <!-- Navegación  -->
     <header>
-        <div class="logo">
-            <!-- Logo del estudio -->
-            <img src="assets/images/logos/pfp.png" alt="Logo del Estudio" width="50" height="auto">
-        </div>
-        <div class="menu-toggle" id="mobile-menu">
+        <a href="#inicio" class="logo">
+            <img src="assets/images/logos/pfp.png" alt="Logo de Slip Team" width="50" height="auto">
+            <span class="brand-name"><span class="c-coral">S</span><span class="c-teal">L</span><span class="c-gold">I</span><span class="c-orange">P</span> TEAM</span>
+        </a>
+        <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú" role="button" tabindex="0">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        <nav id="nav-menu">
+        <nav id="nav-menu" aria-label="Principal">
             <a class="btn-navigation" href="#inicio">Inicio</a>
             <a class="btn-navigation" href="#juego">Split Lands</a>
+            <a class="btn-navigation" href="#personajes">Personajes</a>
+            <a class="btn-navigation" href="#arsenal">Objetos</a>
             <a class="btn-navigation" href="#devlog">Devlog</a>
             <a class="btn-navigation" href="#marketing">Marketing</a>
             <a class="btn-navigation" href="#estudio">Sobre Nosotros</a>
@@ -32,201 +39,650 @@
         </nav>
     </header>
 
-    <!--INICIO (Obligatorio) -->
+    <!-- 1. INICIO / HERO (Obligatorio) -->
     <section id="inicio">
         <div class="contenedor-video">
             <video class="video-fondo" src="assets/videos/TEMP.mp4" autoplay muted loop playsinline></video>
-            <!--video por hacer-->
-            <div class="contenido-banner">
-                <video src="assets/videos/logo_name.webm" style="width: 80%; height: auto; max-width: 600px;" autoplay
-                    muted playsinline></video>
-                <br>
-                <h2><b>Diversión y pasión por crear experiencias únicas</b></h2>
-                <br>
-                <a href="#demo" class="btn-demo">JUEGA LA DEMO AHORA</a> <!--por implementar -->
+            <div class="hero-overlay"></div>
+
+            <div class="contenido-banner revelar">
+                <video src="assets/videos/logo_name.webm" class="logo-video" autoplay muted playsinline></video>
+                <h2><b>Diversión, caos y pasión por crear experiencias únicas</b></h2>
+                <p class="hero-sub">Dos ecosistemas enfrentados. 3 minutos de reloj. ¡Pinta el 90% del mapa y demuestra qué bioma manda!</p>
+                <div class="hero-cta-group">
+                    <a href="#demo" class="btn-demo">¡JUGAR LA DEMO AHORA!</a>
+                    <a href="https://slipteam.itch.io" target="_blank" class="btn-secundario">Jugar en Itch.io</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- NUESTRO JUEGO (Obligatorio) -->
+    <!-- 2. NUESTRO JUEGO (Obligatorio) -->
     <section id="juego" class="seccion-oscura" style="background-image: url('assets/images/backgrounds/forest.jpg');">
-        <h1>Split Lands</h1>
+        <div class="seccion-overlay"></div>
+        <div class="contenedor-seccion">
+            <h1 class="revelar">Split Lands</h1>
+            <p class="lead-seccion revelar">Una misteriosa energía ha alterado las fronteras del planeta. ¡Expande tu hábitat antes de que se agote el tiempo!</p>
 
-        <div class="contenedor-tarjetas">
-            <div class="tarjeta">
-                <h3>Pitch </h3>
-                <h4>Blablablabla</h4>
+            <div class="contenedor-tarjetas">
+                <article class="tarjeta tilt-card revelar">
+                    <div class="badge-tarjeta">EL CONCEPTO</div>
+                    <h3>Pitch</h3>
+                    <p><strong>Split Lands</strong> es un <em>party game</em> frenético y competitivo 2D en vista <em>top-down</em> para 2 jugadores en pantalla compartida. El mapa comienza dividido por la mitad entre dos rivales que no pueden cruzar la frontera.</p>
+                    <p>Para ganar, deberás pintar y "comerte" el <strong>90% del territorio</strong> (o poseer la mayoría al terminar los <strong>3 minutos</strong>) utilizando tus 3 habilidades y los locos objetos que transportan los animales que cruzan el escenario.</p>
+                </article>
+
+                <article class="tarjeta tilt-card revelar">
+                    <div class="badge-tarjeta">FICHA TÉCNICA</div>
+                    <h3>Género y Plataforma</h3>
+                    <div class="grid-tarjetas">
+                        <div class="icon">
+                            <img src="assets/images/icons/2d.png" alt="Icono 2D">
+                            <h4>Arte 2D Cartoon</h4>
+                        </div>
+                        <div class="icon">
+                            <img src="assets/images/icons/party.png" alt="Icono Party">
+                            <h4>Party Game</h4>
+                        </div>
+                        <div class="icon">
+                            <img src="assets/images/icons/competitive.png" alt="Icono Competitivo">
+                            <h4>Competitivo 1v1</h4>
+                        </div>
+                    </div>
+                    <hr class="divisor">
+                    <div class="grid-tarjetas">
+                        <div class="icon">
+                            <img src="assets/images/icons/web.png" alt="Icono Web">
+                            <h4>Web (Itch.io) · PC Windows · Nintendo Switch</h4>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="tarjeta tilt-card revelar">
+                    <div class="badge-tarjeta">JUGABILIDAD</div>
+                    <h3>Características Principales</h3>
+                    <ul class="lista-features">
+                        <li><strong>Invasión Visual de Biomas:</strong> Cada disparo o habilidad hace que tu ecosistema (<em>Playa, Bosque de Sakura, Jungla o Cueva</em>) se coma literalmente el terreno rival.</li>
+                        <li><strong>Fauna Repartidora:</strong> Animales cruzan el mapa llevando recursos, además de eventos especiales como el codiciado <em>Pájaro Dorado</em>.</li>
+                        <li><strong>Habilidades Únicas:</strong> Cada campeón posee un ataque básico, una habilidad táctica y una <em>Ultimate</em> devastadora.</li>
+                        <li><strong>Salud y Aturdimiento:</strong> Cuenta con un medidor de 3 vidas; perderlas ante objetos ofensivos te dejará 5 segundos aturdido a merced del rival.</li>
+                    </ul>
+                </article>
             </div>
-            <div class="tarjeta">
-                <h3>Género y Plataforma</h3>
-                <div class="grid-tarjetas">
-                    <div class="icon">
-                        <img src="assets/images/icons/2d.png" style="width: 128px; height: auto;">
-                        <h4>Gráficos 2D</h4>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/images/icons/party.png" style="width: 128px; height: auto;">
-                        <h4>Fiesta</h4>
-                    </div>
-                    <div class="icon">
-                        <img src="assets/images/icons/competitive.png" style="width: 128px; height: auto;">
-                        <h4>Competitivo</h4>
+
+            <!-- ZONA DE DEMO JUGABLE -->
+            <div id="demo" class="demo-container revelar">
+                <span class="badge-tarjeta">VERSIÓN BETA</span>
+                <h3 class="subtitulo" style="margin-top: 10px;">¡Juega la Demo de Split Lands!</h3>
+                <p>Prueba nuestra versión jugable directamente en el navegador o desde nuestra página oficial de Itch.io.</p>
+
+                <!-- Ventana del juego -->
+                <div class="marco-juego">
+                    <!-- CUANDO SUBAMOS EL JUEGO A ITCH.IO: 
+                         En Itch.io -> "Distribute" -> "Embed game", copiar el <iframe> que da y pegar aquí dentro. 
+                         Mientras tanto, se muestra esto: -->
+                    <div class="placeholder-juego">
+                        <img src="assets/images/logos/pfp.png" alt="Split Lands Logo" width="90">
+                        <h4>Split Lands</h4>
+                        <p>Disponible para 2 jugadores en un mismo teclado (WASD + Flechas) o con mandos.</p>
+                        <a href="https://slipteam.itch.io" target="_blank" rel="noopener" class="btn-demo">▶ JUGAR AHORA EN ITCH.IO</a>
                     </div>
                 </div>
-
-                <hr>
-
-                <div class="icon">
-                    <img src="assets/images/icons/web.png" style="width: 128px; height: auto;">
-                    <h4>Navegadores Web</h4>
-                </div>
             </div>
-            <div class="tarjeta">
-                <h3>Características Principales</h3>
-            </div>
-        </div>
 
-        <h3 class="subtitulo">Capturas y Gameplay</h3>
-        <div class="galeria-capturas">
-            <img src="captura1.png" alt="Captura 1" data-foto="captura1.png" data-texto="Menú principal y HUD">
-            <img src="captura2.png" alt="Captura 2" data-foto="captura2.png" data-texto="Zona del bosque oscuro">
-            <img src="captura3.png" alt="Captura 3" data-foto="captura3.png" data-texto="Combate contra el jefe final">
+
+            <!-- GALERÍA DE CAPTURAS CON POPUP -->
+            <h3 class="subtitulo revelar">Capturas del Gameplay</h3>
+            <p class="revelar">Haz clic en cualquier imagen para ampliarla a pantalla completa.</p>
+            <div class="galeria-capturas revelar">
+                <img src="captura1.png" alt="Menú principal y HUD" class="abrir-popup" data-foto="captura1.png" data-texto="Diseño limpio y colorido del HUD: medidor de terreno pintado superior, reloj de 3 minutos e iconos de cooldown.">
+                <img src="captura2.png" alt="Bioma del Bosque y Playa" class="abrir-popup" data-foto="captura2.png" data-texto="Colisión visual entre el Bioma de la Playa y el Bosque de Sakura separados por la grieta central.">
+                <img src="captura3.png" alt="Selección de personajes" class="abrir-popup" data-foto="captura3.png" data-texto="Pantalla de selección 1v1 y cinemática previa al enfrentamiento entre representantes.">
+            </div>
         </div>
     </section>
 
-    <!-- DEVLOG (Recomendable) -->
+    <!-- 3. PERSONAJES INTERACTIVOS -->
+    <section id="personajes" class="seccion-clara" style="background-image: url('assets/images/backgrounds/beach.png');">
+        <div class="seccion-overlay clara"></div>
+        <div class="contenedor-seccion">
+            <h1 class="revelar">Representantes de los Biomas</h1>
+            <p class="lead-seccion revelar">Selecciona a tu personaje: cada uno posee estadísticas, personalidad y un set de 3 habilidades adaptado a tu estilo de juego.</p>
+
+            <!-- Pestañas para elegir el que ver con miniatura del personaje -->
+            <div class="tabs-personajes revelar" role="tablist">
+                <button class="tab-btn active" data-char="bubble" role="tab">
+                    <img src="assets/images/characters/bubble.png" alt="Bubble"> Bubble (Ajolote)
+                </button>
+                <button class="tab-btn" data-char="robin" role="tab">
+                    <img src="assets/images/characters/robin.png" alt="Robin"> Robin (Zorro)
+                </button>
+                <button class="tab-btn" data-char="tuqui" role="tab">
+                    <img src="assets/images/characters/tuqui.png" alt="Tuqui"> Tuqui (Tucán)
+                </button>
+                <button class="tab-btn" data-char="fluflu" role="tab">
+                    <img src="assets/images/characters/fluflu.png" alt="Fluflu"> Fluflu (Polilla)
+                </button>
+            </div>
+
+            <!-- Ficha con imagen del personaje a la izquierda -->
+             <!-- basicamente esto está por defecto el ajolote y al pulsar se cambia el texto que está definido en el js-->
+            <div class="ficha-personaje revelar" id="ficha-personaje">
+                <div class="ficha- retrato-box">
+                    <div class="halo-bioma"></div>
+                    <img id="char-img" src="assets/images/characters/bubble.png" alt="Imagen de Bubble" class="char-render">
+                    <span class="ficha-bioma" id="char-bioma">Bioma: Playa · Anfibio</span>
+                </div>
+
+                <div class="ficha-info">
+                    <div class="ficha-header">
+                        <h2 id="char-nombre">BUBBLE</h2>
+                        <p class="ficha-personalidad" id="char-personalidad">Personalidad: Inquieto, escurridizo y desafiante.</p>
+                    </div>
+                    <p id="char-desc">Especialista en movilidad. Se desplaza a gran velocidad por la arena pintando terreno a su paso y controlando la trayectoria de sus proyectiles.</p>
+
+                    <div class="stats-barras">
+                        <div class="stat-row">
+                            <span>Velocidad</span>
+                            <div class="barra"><div class="relleno" id="stat-vel" style="width: 95%;"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span>Área de Pintura</span>
+                            <div class="barra"><div class="relleno" id="stat-area" style="width: 60%;"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span>Control / Sabotaje</span>
+                            <div class="barra"><div class="relleno" id="stat-ctrl" style="width: 75%;"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ficha-habilidades">
+                    <div class="skill-card">
+                        <span class="skill-tipo">HABILIDAD BÁSICA</span>
+                        <h4 id="char-basica-titulo">Salpicadura Lineal</h4>
+                        <p id="char-basica-desc">Ataque rápido, alargado y fino hacia el frente que pinta huecos estratégicos en el terreno rival o recoge objetos cercanos.</p>
+                    </div>
+                    <div class="skill-card">
+                        <span class="skill-tipo">HABILIDAD ESPECIAL</span>
+                        <h4 id="char-especial-titulo">Búmeran Acuático</h4>
+                        <p id="char-especial-desc">Lanza un proyectil en forma de bumerán que pinta el suelo y daña al enemigo. Segundos después, regresa siguiendo el movimiento de Bubble.</p>
+                    </div>
+                    <div class="skill-card ulti">
+                        <span class="skill-tipo">HABILIDAD DEFINITIVA (ULTI)</span>
+                        <h4 id="char-ulti-titulo">Vórtice de Remolinos</h4>
+                        <p id="char-ulti-desc">Invoca un círculo de remolinos a su alrededor que se mueven con él, pintando todo a su paso y explotando burbujas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. OBJETOS  Y CONTROLES -->
+    <section id="arsenal" class="seccion-oscura" style="background-image: url('assets/images/backgrounds/jungle.jpg');">
+        <div class="seccion-overlay"></div>
+        <div class="contenedor-seccion">
+            <h1 class="revelar">Objetos y Controles</h1>
+            <p class="lead-seccion revelar">Filtra los objetos que transportan los animales por el mapa y consulta el sistema de controles adaptativos.</p>
+            <!--botones para seleccionar los filtros de objetos-->
+            <div class="filtros-objetos revelar">
+                <button class="filtro-btn active" data-categoria="todos">Todos (20)</button>
+                <button class="filtro-btn" data-categoria="pintar">🎨 Pintar Terreno</button>
+                <button class="filtro-btn" data-categoria="entorpecer">🕸️ Entorpecer Rival</button>
+                <button class="filtro-btn" data-categoria="fauna">🐒 Fauna y Eventos</button>
+                <button class="filtro-btn" data-categoria="clima">⛈️ Climáticos</button>
+                <button class="filtro-btn" data-categoria="aturdir">💫 Aturdir (3 Vidas)</button>
+            </div>
+            <!--lista de todos los objetos con su categoria y estilo de carta-->
+            <div class="grid-objetos revelar" id="grid-objetos">
+                <div class="item-card" data-categoria="pintar">
+                    <span class="item-icon">💣</span>
+                    <h4>Bomb-a</h4>
+                    <p>Explota pintando un gran área circular alrededor del punto de impacto.</p>
+                </div>
+                <div class="item-card" data-categoria="pintar">
+                    <span class="item-icon">🎉</span>
+                    <h4>Cañón Discreto</h4>
+                    <p>Pinta una amplia zona en cono frente al jugador (de discreto solo tiene el nombre).</p>
+                </div>
+                <div class="item-card" data-categoria="pintar">
+                    <span class="item-icon">🔫</span>
+                    <h4>Pistola Torpedo</h4>
+                    <p>Cuenta con hasta 3 disparos que estallan en círculo al tocar los límites exteriores del mapa.</p>
+                </div>
+                <div class="item-card" data-categoria="pintar">
+                    <span class="item-icon">🐌</span>
+                    <h4>Caracol de Tinta</h4>
+                    <p>Agente autónomo que avanza pintando el campo enemigo hasta que el rival se acerca a detenerlo.</p>
+                </div>
+                <div class="item-card" data-categoria="entorpecer">
+                    <span class="item-icon">⛏️</span>
+                    <h4>Taladro Minero</h4>
+                    <p>Permite cruzar temporalmente la frontera hacia el terreno enemigo para robarle objetos.</p>
+                </div>
+                <div class="item-card" data-categoria="entorpecer">
+                    <span class="item-icon">🐝</span>
+                    <h4>Panal de Abejas</h4>
+                    <p>Libera un enjambre en territorio rival que ralentiza drásticamente el movimiento del oponente.</p>
+                </div>
+                <div class="item-card" data-categoria="entorpecer">
+                    <span class="item-icon">🌪️</span>
+                    <h4>Lanza Tornados</h4>
+                    <p>Genera un vórtice que ancla al rival e impide que pueda alejarse de esa zona.</p>
+                </div>
+                <div class="item-card" data-categoria="entorpecer">
+                    <span class="item-icon">🧃</span>
+                    <h4>Zumo Mágico Feliz</h4>
+                    <p>Invierte los controles de dirección del jugador rival durante varios segundos de caos total.</p>
+                </div>
+                <div class="item-card" data-categoria="entorpecer">
+                    <span class="item-icon">🧊</span>
+                    <h4>Jaula de Cristal</h4>
+                    <p>Encierra temporalmente al enemigo dentro del perímetro en el que se encontraba.</p>
+                </div>
+                <div class="item-card" data-categoria="fauna">
+                    <span class="item-icon">🪏</span>
+                    <h4>Pala Improvisada</h4>
+                    <p>Desentierra un objeto aleatorio cuya rareza mejora según la zona excavada.</p>
+                </div>
+                <div class="item-card" data-categoria="fauna">
+                    <span class="item-icon">🗿</span>
+                    <h4>Tótem del Rey Mono</h4>
+                    <p>El Rey Mono envía a sus secuaces a invadir el lado rival y robar sus objetos.</p>
+                </div>
+                <div class="item-card" data-categoria="fauna">
+                    <span class="item-icon">🐿️</span>
+                    <h4>Fiesta de las Ardillas</h4>
+                    <p>Inunda el mapa de ardillas veloces cargadas de recursos. ¡Atrápalas si puedes!</p>
+                </div>
+                <div class="item-card" data-categoria="fauna">
+                    <span class="item-icon">🦀</span>
+                    <h4>Trampa para Cangrejos</h4>
+                    <p>Detiene automáticamente a los cangrejos repartidores cuando pasan por tu territorio.</p>
+                </div>
+                <div class="item-card" data-categoria="fauna">
+                    <span class="item-icon">🪉</span>
+                    <h4>Lira del Océano</h4>
+                    <p>Cautiva con su música a los animalitos cercanos, haciendo que se acerquen a ti.</p>
+                </div>
+                <div class="item-card" data-categoria="fauna">
+                    <span class="item-icon">🍏</span>
+                    <h4>Fruta Podrida</h4>
+                    <p>Espanta a todos los animales repartidores del campo enemigo durante un tiempo.</p>
+                </div>
+                <div class="item-card" data-categoria="clima">
+                    <span class="item-icon">🍹</span>
+                    <h4>Lluvia de Zumo</h4>
+                    <p>Protege tu ecosistema haciendo que tu porcentaje de terreno no pueda menguar durante unos segundos.</p>
+                </div>
+                <div class="item-card" data-categoria="clima">
+                    <span class="item-icon">🌫️</span>
+                    <h4>Niebla Embotellada</h4>
+                    <p>Cubre toda la pantalla con una densa niebla que reduce la visibilidad de ambos jugadores.</p>
+                </div>
+                <div class="item-card" data-categoria="clima">
+                    <span class="item-icon">❄️</span>
+                    <h4>Tormenta de Nieve</h4>
+                    <p>Desata una ventisca en el bioma rival que deja al enemigo congelado e inmóvil.</p>
+                </div>
+                <div class="item-card" data-categoria="clima">
+                    <span class="item-icon">☀️</span>
+                    <h4>Sequía</h4>
+                    <p>Bloquea temporalmente la capacidad de pintar suelo para ambos jugadores.</p>
+                </div>
+                <div class="item-card" data-categoria="aturdir">
+                    <span class="item-icon">🐚</span>
+                    <h4>Concha Fuerte y Sandías</h4>
+                    <p>Proyectiles que ignoran fronteras o caen del cielo para restar las 3 vidas del rival y aturdirlo 5s.</p>
+                </div>
+            </div>
+
+            <!-- Esquema de Controles -->
+            <div class="panel-controles revelar">
+                <h3>Esquemas de Control Accesibles</h3>
+                <p>El juego detecta automáticamente si hay mandos conectados. Además, en teclado <strong>invertimos el orden de teclas en Arrows</strong> respecto a WASD para que ambos jugadores utilicen exactamente los mismos dedos de la mano.</p>
+                <!-- igual que loso bjetos pero con los controles-->
+                <div class="selector-esquema">
+                    <button class="esquema-btn active" data-esquema="wasd">⌨️ Jugador Teclado (WASD)</button>
+                    <button class="esquema-btn" data-esquema="arrows">⌨️ Jugador Teclado (Arrows)</button>
+                    <button class="esquema-btn" data-esquema="gamepad">🎮 Mando (Gamepad)</button>
+                </div>
+                <!-- aqui por defecto sale el teclado-->
+                <div class="mapa-teclas" id="mapa-teclas">
+                    <div class="tecla-box"><span class="tecla-k" id="ctrl-mov">W A S D</span><small>Movimiento</small></div>
+                    <div class="tecla-box"><span class="tecla-k" id="ctrl-bas">Tecla F</span><small>Básica / Coger y Lanzar Objeto</small></div>
+                    <div class="tecla-box"><span class="tecla-k" id="ctrl-esp">Tecla G</span><small>Habilidad Especial</small></div>
+                    <div class="tecla-box"><span class="tecla-k" id="ctrl-ult">Tecla H</span><small>Habilidad Definitiva (Ulti)</small></div>
+                    <div class="tecla-box"><span class="tecla-k" id="ctrl-pau">Espacio</span><small>Pausa Común</small></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. DEVLOG / HOJA DE RUTA -->
     <section id="devlog" class="seccion-clara" style="background-image: url('assets/images/backgrounds/beach.png');">
-        <h1>Devlog</h1>
-        <div class="contenedor-tarjetas vertical">
-            <div class="tarjeta">
-                <h3>Hito 1</h3>
-                <h4>Blablablabla.</h4>
-            </div>
-            <div class="tarjeta">
-                <h3>Hito 2</h3>
-                <h4>Blablablabla.</h4>
+        <div class="seccion-overlay clara"></div>
+        <div class="contenedor-seccion">
+            <h1 class="revelar">Devlog y Hoja de Ruta</h1>
+            <p class="lead-seccion revelar">12 semanas de desarrollo ágil mediante Sprints y control de versiones en GitHub.</p>
+
+            <div class="timeline-devlog">
+                <article class="tarjeta timeline-item tilt-card revelar">
+                    <span class="hito-tag completado">SEMANAS 1 - 3 · COMPLETADO</span>
+                    <h3>Hito 1: Prototipo Funcional (Core Loop)</h3>
+                    <p>Configuración del proyecto en Unity 2D y repositorio en GitHub. Primeros bocetos de personajes (Bubble, Robin, Tuqui y Fluflu), mapas y UI. Implementación del movimiento (`Movement`, `PlayerInputController`) y validación de la mecánica central: un escenario dividido en dos colores donde se conquista territorio rival usando `BasicSkill`, `DashNSplash` y la primera `Bomb_a`.</p>
+                </article>
+
+                <article class="tarjeta timeline-item tilt-card revelar">
+                    <span class="hito-tag completado">SEMANAS 4 - 7 · COMPLETADO</span>
+                    <h3>Hito 2: Mecánicas Completadas y Arte Alpha</h3>
+                    <p>Integración las 3 habilidades de un personaje (básica, especial y ultimate) y de la recogida y lanzamiento de recursos. Sustitución de placeholders por los spritesheets finales animados frame a frame, e incorporación de música dinámica y efectos sonoros (SFX).</p>
+                </article>
+
+                <article class="tarjeta timeline-item tilt-card revelar">
+                    <span class="hito-tag en-curso">SEMANAS 8 - 10 · VERSIÓN ACTUAL</span>
+                    <h3>Hito 3: Versión Beta y Cierre de Contenido</h3>
+                    <p>Implementación completa de todo el arte 2D, menús de interfaz (Pantalla de Título, Selección 1v1, HUD con medidor en tiempo real, Pausa con esquema de controles, Victoria y Tienda In-Game). Flujo de escenas completo, congelación de nuevas funcionalidades para pulir el balance competitivo y optimización para navegador web.</p>
+                </article>
+
+                <article class="tarjeta timeline-item tilt-card revelar">
+                    <span class="hito-tag proximo">SEMANAS 11 - 12 · GOLD MASTER</span>
+                    <h3>Hito 4: Lanzamiento Oficial (Release)</h3>
+                    <p>Sesiones intensivas de QA y playtesting para eliminar cualquier error bloqueante. Actualización final del GDD, despliegue del portfolio oficial de Slip Team, campaña en redes sociales y publicación de la build estable en <strong>Itch.io</strong>.</p>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- MARKETING (Obligatorio) -->
+    <!-- 6. MARKETING, DIFERENCIACIÓN Y REDES SOCIALES -->
     <section id="marketing" class="seccion-oscura" style="background-image: url('assets/images/backgrounds/jungle.jpg');">
-        <h1>Marketing</h1>
-        <div class="contenedor-tarjetas">
-            <div class="tarjeta">
-                <h3>Público Objetivo</h3>
-                <h4>Blablablabla</h4>
+        <div class="seccion-overlay"></div>
+        <div class="contenedor-seccion">
+            <h1 class="revelar">Marketing y Modelo de Negocio</h1>
+            <p class="lead-seccion revelar">Estrategia comercial accesible, análisis competitivo y presencia activa en redes sociales.</p>
+
+            <div class="contenedor-tarjetas">
+                <article class="tarjeta tilt-card revelar">
+                    <div class="badge-tarjeta">AUDIENCIA</div>
+                    <h3>Público Objetivo</h3>
+                    <p>Dirigido a jugadores casuales y grupos de amigos de <strong>8 a 35 años</strong> que buscan partidas locales rápidas y llenas de risas. Nos enfocamos en dos perfiles compradores:</p>
+                    <ul class="lista-features">
+                        <li><strong>Anfitrión Social (18-35 años):</strong> Disfruta de tardes de juego en casa y adquiere el juego base y DLCs de biomas para sorprender a sus invitados.</li>
+                        <li><strong>Jugador Expresivo / Coleccionista (8-24 años):</strong> Atraído por el carisma cartoon de Bubble, Robin, Tuqui o Fluflu, adquiere skins cosméticas para lucirlas en pantalla compartida.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta tilt-card revelar">
+                    <div class="badge-tarjeta">VENTAJA COMPETITIVA</div>
+                    <h3>Juegos Similares y... ¿Por qué nosotros?</h3>
+                    <p>Nos inspiramos en referentes de sofá como <em>Overcooked</em>, <em>Naughty Gnomes</em> o <em>Castle Crashers</em>, y en el arte de <em>Friday Night Funkin'</em> y <em>Animal Jam</em>. <strong>¿Qué hace único y superior a Split Lands?</strong></p>
+                    <ul class="lista-features">
+                        <li><strong>Lectura Instantánea:</strong> A diferencia de otros juegos en pantalla dividida donde miras la cámara del rival, aquí el escenario entero es único y el propio suelo pintado actúa como marcador vivo.</li>
+                        <li><strong>100% Jugable en un solo teclado sin Mandos:</strong> Mientras que la competencia exige comprar mandos, nuestro sistema <em>WASD + Arrows</em> permite jugar en cualquier portátil al instante.</li>
+                        <li><strong>Frontera Dinámica e IA Viva:</strong> No son niveles estáticos; la frontera cambia cada segundo y los recursos dependen de animales salvajes con IA propia.</li>
+                        <li><strong>Precio Imbatible:</strong> Por solo <strong>9,99 €</strong> (frente a los 25-40 € de otros party games) ofrecemos multijugador sin mecánicas <em>Pay-to-Win</em>.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta tilt-card revelar">
+                    <div class="badge-tarjeta">MONETIZACIÓN B2P</div>
+                    <h3>Estrategia, Plataformas y Precios</h3>
+                    <p>Modelo <strong>Buy-to-Play (B2P)</strong> reducido que fomenta la compra compartida, combinado con una <strong>Tienda In-Game</strong> de cosméticos y DLCs:</p>
+                    <div class="tabla-precios">
+                        <div class="fila-precio">
+                            <span class="concepto-precio">🎮 Juego Base (PC Windows / Switch Digital)</span>
+                            <span class="etiqueta-precio">9,99 €</span>
+                        </div>
+                        <div class="fila-precio">
+                            <span class="concepto-precio">💿 Edición Física (Nintendo Switch)</span>
+                            <span class="etiqueta-precio">14,99 €</span>
+                        </div>
+                        <div class="fila-precio">
+                            <span class="concepto-precio">🌴 DLC "Aventura en la Jungla" (Bioma + Eventos)</span>
+                            <span class="etiqueta-precio">5,99 €</span>
+                        </div>
+                        <div class="fila-precio">
+                            <span class="concepto-precio">✨ Pack de Skins (4 aspectos cosméticos)</span>
+                            <span class="etiqueta-precio">2,99 €</span>
+                        </div>
+                        <div class="fila-precio">
+                            <span class="concepto-precio">🌐 Versión Demo Web (Itch.io con Tienda)</span>
+                            <span class="etiqueta-precio gratis">Gratuita</span>
+                        </div>
+                    </div>
+                </article>
             </div>
-            <div class="tarjeta">
-                <h3>Juegos Similares</h3>
-                <h4>Blablablabla</h4>
-            </div>
-            <div class="tarjeta">
-                <h3>Estrategia y Plataformas</h3>
-                <h4>Blablablabla</h4>
+
+            <!-- SECCIÓN DE IFRAMES DE REDES SOCIALES -->
+            <div class="social-wall revelar">
+                <h3 class="subtitulo">Comunidad viva · Nuestras Publicaciones (slipteamdev)</h3>
+                <p>Sigue el día a día del desarrollo, avances de arte y tráilers directamente desde nuestras cuentas oficiales.</p>
+
+                <div class="grid-embeds">
+                    <!-- iframe de Instagram -->
+                    <div class="embed-card">
+                        <div class="embed-header">
+                            <img src="assets/images/logos/instagram.png" alt="Instagram" width="28">
+                            <span>@slipteamdev en Instagram</span>
+                            <a href="https://www.instagram.com/slipteamdev" target="_blank" class="btn-mini">Seguir</a>
+                        </div>
+                        <iframe class="social-iframe" src="https://www.instagram.com/slipteamdev/embed" title="Instagram de Slip Team" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+                    </div>
+
+                    <!-- iframe de X (Twitter) -->
+                    <div class="embed-card">
+                        <div class="embed-header">
+                            <img src="assets/images/logos/x.webp" alt="X Twitter" width="28">
+                            <span>@slipteamdev en X (Twitter)</span>
+                            <a href="https://x.com/slipteamdev" target="_blank" class="btn-mini">Ver perfil</a>
+                        </div>
+                        <div class="twitter-wrapper">
+                            <a class="twitter-timeline" data-height="420" data-theme="dark" href="https://twitter.com/slipteamdev?ref_src=twsrc%5Etfw">
+                                Cargando publicaciones de @slipteamdev en X...
+                            </a>
+                            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ASPECTOS TÉCNICOS Y RESULTADOS (Recomendables) -->
+    <!-- 7. ASPECTOS TÉCNICOS Y RESULTADOS -->
     <section id="tecnico-resultados" class="seccion-clara" style="background-image: url('assets/images/backgrounds/forest.jpg');">
-        <h1>Aspectos Técnicos y Resultados</h1>
-        <div class="contenedor-tarjetas">
-            <div class="tarjeta">
-                <h3>Aspectos Técnicos</h3>
-                <h4><strong>Programación:</strong> Blablablabla.</h4>
-                <h4><strong>Arte:</strong> Blablablabla.</h4>
-                <h4><strong>Audio:</strong> Blablablabla.</h4>
-            </div>
-            <div class="tarjeta">
-                <h3>Resultados y Feedback</h3>
-                <h4>Blablablabla.</h4>
+        <div class="seccion-overlay clara"></div>
+        <div class="contenedor-seccion">
+            <h1 class="revelar">Aspectos Técnicos y Resultados</h1>
+
+            <div class="contenedor-tarjetas">
+                <article class="tarjeta tilt-card revelar">
+                    <div class="badge-tarjeta">INGENIERÍA Y ARTE</div>
+                    <h3>Arquitectura y Producción</h3>
+                    <ul class="lista-features">
+                        <li><strong>Programación en Unity:</strong> Arquitectura modular desacoplada en sistemas de Controles, Habilidades y Controladores de Objetos, junto a máquinas de estados para la IA de los animales repartidores.</li>
+                        <li><strong>Arte 2D y Animación:</strong> Ilustración original con lineart expresivo, <em>turnarounds</em> de referencia y ciclos de animación dibujados a mano de 6 frames.</li>
+                        <li><strong>Diseño Sonoro Dinámico:</strong> BSO que acelera su tempo en los últimos 30 segundos de partida, acompañada de 4 capas de SFX para feedback instantáneo.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta tilt-card revelar">
+                    <div class="badge-tarjeta">QA Y MÉTRICAS</div>
+                    <h3>Resultados y Feedback</h3>
+                    <ul class="lista-features">
+                        <li><strong>Accesibilidad Total:</strong> Implementación de teclas en el esquema <em>Arrows</em> para igualar la ergonomía con <em>WASD</em>, pausa en la barra espaciadora y selector de tamaño de fuente en el menú de Ajustes.</li>
+                        <li><strong>Balanceo Competitivo:</strong> Ajuste de los tiempos de recarga de las habilidades Definitivas según su impacto en el mapa y límite de inventario a un objeto para evitar el spameo.</li>
+                        <li><strong>Rendimiento Web y PC:</strong> 60 FPS estables con lectura visual inmediata de la frontera en formato de pantalla única.</li>
+                    </ul>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- ESTUDIO (Obligatorio) -->
+    <!-- 8. SOBRE NOSOTRO -->
     <section id="estudio" class="seccion-oscura" style="background-image: url('assets/images/backgrounds/beach.png');">
-        <h1>Sobre Nosotros</h1>
+        <div class="seccion-overlay"></div>
+        <div class="contenedor-seccion">
+            <h1 class="revelar">Sobre Nosotros · Slip Team</h1>
+            <p class="lead-seccion revelar">Un estudio indie multidisciplinar de 6 desarrolladores unidos por la creatividad, la diversión y el cuidado por el detalle.</p>
 
-        <h3 class="subtitulo">Miembros del Equipo</h3>
-        <div class="grid-miembros">
-            <div class="miembro">
-                <img src="assets/images/members/angel.png" alt="Ángel">
-                <h4>Ángel</h4>
-                <h3>Jefe de programación y Arquitectura</h3>
+            <h3 class="subtitulo revelar">Miembros del Equipo</h3>
+            <div class="grid-miembros revelar">
+                <div class="miembro">
+                    <img src="assets/images/members/angel.png" alt="Ángel">
+                    <h4>Ángel</h4>
+                    <span class="rol-badge">Jefe de Programación y Arquitectura</span>
+                    <p>Lidera las decisiones técnicas del software, la estructura modular en Unity y el repositorio.</p>
+                </div>
+                <div class="miembro">
+                    <img src="assets/images/members/lucas.png" alt="Lucas">
+                    <h4>Lucas</h4>
+                    <span class="rol-badge">Programador, Jugabilidad y Audio</span>
+                    <p>Implementación de mecánicas de combate, objetos interactivos y diseño sonoro.</p>
+                </div>
+                <div class="miembro">
+                    <img src="assets/images/members/miguel.png" alt="Miguel">
+                    <h4>Miguel</h4>
+                    <span class="rol-badge">Programador y Jefe de Accesibilidad</span>
+                    <p>Sistemas de control adaptativos, integración de mecánicas y estándares de accesibilidad.</p>
+                </div>
+                <div class="miembro">
+                    <img src="assets/images/members/sara.png" alt="Sara">
+                    <h4>Sara</h4>
+                    <span class="rol-badge">Jefa de Animación, Planificación e Interfaces</span>
+                    <p>Diseño de escenarios, diseño de UI/UX y planificación de sprints e hitos del proyecto.</p>
+                </div>
+                <div class="miembro">
+                    <img src="assets/images/members/claudia.png" alt="Claudia">
+                    <h4>Claudia</h4>
+                    <span class="rol-badge">Arte, Animación y Jefa de Narración</span>
+                    <p>Diseño de objetos, lore de los ecosistemas, estimación y apoyo en animación 2D e interfaces.</p>
+                </div>
+                <div class="miembro">
+                    <img src="assets/images/members/irene.png" alt="Irene">
+                    <h4>Irene</h4>
+                    <span class="rol-badge">Jefa de Arte, Animación y Coordinación</span>
+                    <p>Dirección de arte 2D, diseño de personajes, coordinación del equipo y animación frame a frame.</p>
+                </div>
             </div>
-            <div class="miembro">
-                <img src="assets/images/members/lucas.png" alt="Lucas">
-                <h4>Lucas</h4>
-                <h3>Programador y Jugabilidad</h3>
-            </div>
-            <div class="miembro">
-                <img src="assets/images/members/miguel.png" alt="Miguel">
-                <h4>Miguel</h4>
-                <h3>Programador y Jefe de Accesibilidad</h3>
-            </div>
-            <div class="miembro">
-                <img src="assets/images/members/sara.png" alt="Sara">
-                <h4>Sara</h4>
-                <h3>Jefa de Arte, Planificación e Interfaces</h3>
-            </div>
-            <div class="miembro">
-                <img src="assets/images/members/claudia.png" alt="Claudia">
-                <h4>Claudia</h4>
-                <h3>Arte, Animación, Jefa de Narración</h3>
-            </div>
-            <div class="miembro">
-                <img src="assets/images/members/irene.png" alt="Irene">
-                <h4>Irene</h4>
-                <h3>Jefa de Animación, Arte y Coordinación</h3>
+
+            <div class="contenedor-tarjetas">
+                <article class="tarjeta tilt-card revelar">
+                    <div class="badge-tarjeta">IDENTIDAD DE MARCA</div>
+                    <h3>Misión, Visión y Valores</h3>
+                    <p><strong>Nuestra Misión:</strong> Aportar a la industria videojuegos accesibles, vibrantes y llenos de energía que reunan a amigos y familiares frente a una misma pantalla.</p>
+                    <p><strong>Nuestra Visión:</strong> Consolidarnos como un estudio indie referente en <em>party games</em> multijugador en PC, Web y consolas.</p>
+                    <p><strong>Valores de Slip Team:</strong> <em>Diversión, Caos, Entusiasmo, Optimismo y Energía</em>, defendiendo una monetización ética sin Pay-to-Win y un desarrollo sostenible.</p>
+                </article>
+
+                <article class="tarjeta tilt-card revelar">
+                    <div class="badge-tarjeta">ORIGEN</div>
+                    <h3>Historia del Proyecto</h3>
+                    <p>¡Nuestro juego nació de un malentendido! Al constituir el estudio, un miembro del equipo pensó que nos llamábamos <strong><em>Split Team</em></strong> en lugar de <strong><em>Slip Team</em></strong>.</p>
+                    <p>Aquella confusión encendió nuestra chispa creativa: decidimos convertir la división (<em>Split</em>) en nuestra mecánica central, dando vida a <strong>Split Lands</strong> y su guerra por pintar y conquistar la otra mitad de la pantalla.</p>
+                </article>
             </div>
         </div>
-
-        <div class="contenedor-tarjetas">
-            <div class="tarjeta">
-                <h3>Misión, Visión y Valores</h3>
-                <h4>Qué queremos aportar a la industria, dónde queremos llegar como estudio y qué principios guían
-                    nuestro trabajo.</h4>
-            </div>
-            <div class="tarjeta">
-                <h3>Historia del Proyecto</h3>
-                <h4>Nuestro juego comenzó con una equivocación conceptual: Un miembro del equipo pensó que nuestro
-                    nombre era
-                    <i>Split Team</i> en lugar de <i>Slip Team</i>, lo que derivó en la división de pantalla como
-                    mecánica
-                    principal.
-                </h4>
-            </div>
-        </div>
-
     </section>
 
-    <!--CONTACTO (Obligatorio) -->
+    <!-- POPUP PARA LAS CAPTURAS -->
+    <div id="fondo-popup" class="oculto" role="dialog" aria-modal="true" aria-label="Vista ampliada de captura">
+        <span id="cerrar-popup" role="button" tabindex="0" aria-label="Cerrar">&times;</span>
+        <img id="imagen-popup" src="" alt="Captura ampliada de Split Lands">
+        <p id="texto-popup"></p>
+    </div>
+
+    <!-- 9. CONTACTO Y REDES SOCIALES (Obligatorio) -->
     <footer id="contacto">
-        <h2>Contacto y Redes Sociales</h2>
+        <div class="contenedor-seccion">
+            <h2 class="revelar">Contacto, Feedback y Redes Sociales</h2>
+            <p class="footer-sub revelar">¿Has probado la Beta de <strong>Split Lands</strong>, has encontrado un bug o tienes una idea para un objeto? ¡Escríbenos!</p>
 
-        <h3>Contacto: slipteamdev@gmail.com</h3>
+            <!-- FORMULARIO INTERACTIVO DE PLAYTESTING Y CONTACTO -->
+            <form id="form-contacto" class="form-split revelar">
+                <div class="form-grid">
+                    <div class="form-grupo">
+                        <label for="nombre-usuario">Tu Nombre o Nick *</label>
+                        <input type="text" id="nombre-usuario" name="nombre" placeholder="Ej. GamerAxolotl67" required>
+                    </div>
 
-        <div class="links">
-            <a href="https://linktr.ee/slipteamdev" target="_blank">
-                <img src="assets/images/logos/linktree.png" alt="Linktree" width="50" height="auto">
-            </a>
-            <a href="https://x.com/slipteamdev" target="_blank">
-                <img src="assets/images/logos/x.webp" alt="Twitter" width="50" height="auto">
-            </a>
-            <a href="https://slipteam.itch.io" target="_blank">
-                <img src="assets/images/logos/itch.webp" alt="Itch.io" width="50" height="auto">
-            </a>
-            <a href="https://www.instagram.com/slipteamdev" target="_blank">
-                <img src="assets/images/logos/instagram.png" alt="Instagram" width="50" height="auto">
-            </a>
-            <a href="https://www.youtube.com/@SlipTeamDev" target="_blank">
-                <img src="assets/images/logos/youtube.webp" alt="YouTube" width="50" height="auto">
-            </a>
-            <a href="https://github.com/slipteamdev" target="_blank">
-                <img src="assets/images/logos/github.png" alt="GitHub" width="50" height="auto">
-            </a>
+                    <div class="form-grupo">
+                        <label for="email-usuario">Tu Correo Electrónico *</label>
+                        <input type="email" id="email-usuario" name="email" placeholder="tucorreo@ejemplo.com" required>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="motivo-contacto">¿Para qué nos escribes? *</label>
+                        <select id="motivo-contacto" name="motivo" required>
+                            <option value="" disabled selected>Selecciona una opción...</option>
+                            <option value="Feedback de la Demo Beta">🎮 Dar Feedback de la Demo Beta</option>
+                            <option value="Reporte de Bug">🐛 Reportar un Bug o fallo técnico</option>
+                            <option value="Propuesta de Objeto o Skin">💡 Proponer un Objeto o Skin para la Tienda</option>
+                            <option value="Colaboración / Prensa">🤝 Colaboración, Torneo o Prensa</option>
+                        </select>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="campeon-fav">¿Con qué personaje juegas?</label>
+                        <input type="text" id="campeon-fav" name="campeon" list="lista-campeones" placeholder="Elige o escribe tu favorito...">
+                        <datalist id="lista-campeones">
+                            <option value="🦎 Bubble (Ajolote)"></option>
+                            <option value="🦊 Robin (Zorro)"></option>
+                            <option value="🦜 Tuqui (Tucán)"></option>
+                            <option value="🦋 Fluflu (Polilla)"></option>
+                        </datalist>
+                    </div>
+                </div>
+
+                <!-- Control interactivo -->
+                <div class="form-grupo range-box">
+                    <label for="nota-hype">
+                        Nivel de diversión con Split Lands: 
+                        <output id="valor-hype" for="nota-hype">10 / 10 🔥 ¡Puro Caos!</output>
+                    </label>
+                    <input type="range" id="nota-hype" name="hype" min="1" max="10" value="10">
+                </div>
+
+                <div class="form-grupo">
+                    <label for="mensaje-usuario">Tu Mensaje *</label>
+                    <textarea id="mensaje-usuario" name="mensaje" rows="4" placeholder="Cuéntanos qué te ha parecido la conquista de biomas, qué objeto te ha hecho reír más o qué mejorarías..." required></textarea>
+                </div>
+
+                <div class="form-acciones">
+                    <button type="submit" class="btn-enviar-form">🚀 Enviar Mensaje a Slip Team</button>
+                </div>
+
+                <!-- Mensaje de confirmación -->
+                <div id="respuesta-form" class="respuesta-form oculto" role="status" aria-live="polite"></div>
+            </form>
+
+            <!-- Correo y Redes Sociales -->
+            <div class="email-box revelar">
+                <span id="email-texto">slipteamdev@gmail.com</span>
+                <button type="button" id="btn-copiar-email" class="btn-copiar">📋 Copiar correo</button>
+            </div>
+
+            <div class="links revelar">
+                <a href="https://linktr.ee/slipteamdev" target="_blank" title="Linktree">
+                    <img src="assets/images/logos/linktree.png" alt="Linktree" width="50" height="auto">
+                </a>
+                <a href="https://x.com/slipteamdev" target="_blank" title="X / Twitter">
+                    <img src="assets/images/logos/x.webp" alt="Twitter" width="50" height="auto">
+                </a>
+                <a href="https://slipteam.itch.io" target="_blank" title="Itch.io">
+                    <img src="assets/images/logos/itch.webp" alt="Itch.io" width="50" height="auto">
+                </a>
+                <a href="https://www.instagram.com/slipteamdev" target="_blank" title="Instagram">
+                    <img src="assets/images/logos/instagram.png" alt="Instagram" width="50" height="auto">
+                </a>
+                <a href="https://www.youtube.com/@SlipTeamDev" target="_blank" title="YouTube">
+                    <img src="assets/images/logos/youtube.webp" alt="YouTube" width="50" height="auto">
+                </a>
+                <a href="https://github.com/slipteamdev" target="_blank" title="GitHub">
+                    <img src="assets/images/logos/github.png" alt="GitHub" width="50" height="auto">
+                </a>
+            </div>
+
+            <p class="copyright">© 2026-2027 Slip Team · Grado en Diseño y Desarrollo de Videojuegos · Grupo 4</p>
         </div>
     </footer>
 
