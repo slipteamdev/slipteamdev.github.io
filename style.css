@@ -10,12 +10,15 @@
     --cream-bg: #f4efc9;
     --dark-navy: #0f1c2e;
     --text-light: #f8f6f0;
-    --font-display: 'Titan One', 'Sniglet', cursive;
+    --font-display: 'Sniglet', cursive; /* Cambiada para que todos los títulos sean 100% legibles */
     --font-rounded: 'Sniglet', cursive;
     --font-body: 'Forum', serif;
 }
 
-* {
+/* CORREGIDO: El asterisco universal evita que las casillas del formulario se salgan en móvil */
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -33,7 +36,7 @@ body {
     line-height: 1.6;
 }
 
-/* Barra que se  mueve con un degradado según avanzas */
+/* Barra que se mueve con un degradado según avanzas */
 #scroll-progress {
     position: fixed;
     top: 0;
@@ -45,8 +48,9 @@ body {
     transition: width 0.1s ease-out;
 }
 
-/**/
-
+/* ==========================================================================
+   HEADER Y NAVEGACIÓN
+   ========================================================================== */
 header {
     background-color: var(--cream-bg);
     padding: 12px 40px;
@@ -68,7 +72,7 @@ header {
 }
 
 .brand-name {
-    font-family: var(--font-display);
+    font-family: 'Titan One', 'Sniglet', cursive;
     font-size: 1.5rem;
     color: var(--charcoal-blue);
     letter-spacing: 1px;
@@ -120,7 +124,7 @@ nav {
 }
 
 /* ==========================================================================
-   HERO / INICIO (Corregida separación y margen de botones)
+   HERO / INICIO (Corregido fondo del logo en móvil)
    ========================================================================== */
 #inicio {
     padding: 0;
@@ -142,7 +146,7 @@ nav {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding: 40px 20px 70px; /* Espacio inferior amplio para que los botones nunca toquen el borde */
+    padding: 40px 20px 70px;
 }
 
 .video-fondo {
@@ -169,8 +173,6 @@ nav {
     margin: 0 auto;
 }
 
-
-
 .logo-video {
     width: 75%;
     max-width: 460px;
@@ -178,7 +180,17 @@ nav {
     object-fit: contain;
     display: block;
     margin: 0 auto 12px;
+    background: transparent !important;
     filter: drop-shadow(0 8px 20px rgba(0,0,0,0.6));
+}
+
+.logo-movil-transparente {
+    display: none;
+    width: 150px;
+    height: auto;
+    margin: 0 auto 16px;
+    background: transparent !important;
+    filter: drop-shadow(0 8px 18px rgba(0,0,0,0.7));
 }
 
 .contenido-banner h2 {
@@ -199,7 +211,7 @@ nav {
 
 .hero-cta-group {
     display: flex;
-    gap: 28px; /* Separación holgada entre ambos botones */
+    gap: 28px;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -251,7 +263,7 @@ nav {
 }
 
 /* ==========================================================================
-   SECCIONES Y CENTRADO GLOBAL
+   SECCIONES Y TIPOGRAFÍA DE TÍTULOS MEJORADA (MÁS LEGIBLE)
    ========================================================================== */
 section {
     position: relative;
@@ -282,15 +294,17 @@ section {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 h1 {
-    font-family: var(--font-display);
-    font-size: 3.5rem;
-    letter-spacing: 1.5px;
+    font-family: var(--font-rounded);
+    font-weight: 800;
+    font-size: 3.4rem;
+    letter-spacing: 2px;
     margin: 0 0 12px;
     color: var(--jasmine);
-    text-shadow: 0 4px 0 var(--charcoal-blue), 0 8px 20px rgba(0,0,0,0.6);
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.65);
     text-align: center;
 }
 
@@ -304,7 +318,9 @@ h1 {
 
 .subtitulo {
     font-family: var(--font-rounded);
+    font-weight: 800;
     font-size: 2.1rem;
+    letter-spacing: 0.8px;
     color: var(--jasmine);
     margin-top: 55px;
     margin-bottom: 16px;
@@ -312,7 +328,7 @@ h1 {
 }
 
 /* ==========================================================================
-   TARJETAS CENTRADAS Y HOMOGÉNEAS
+   TARJETAS, FICHA TÉCNICA ELABORADA Y CARACTERÍSTICAS CON FOTOS
    ========================================================================== */
 .contenedor-tarjetas {
     width: 100%;
@@ -360,6 +376,8 @@ h1 {
 
 .tarjeta h3 {
     font-family: var(--font-rounded);
+    font-weight: 800;
+    letter-spacing: 0.5px;
     color: var(--jasmine);
     margin: 0 0 16px;
     font-size: 1.9rem;
@@ -386,41 +404,257 @@ h1 {
     color: var(--jasmine);
 }
 
-.grid-tarjetas {
+/* Ficha Técnica Elaborada */
+.ficha-tecnica-tabla {
     display: flex;
-    justify-content: space-around;
-    gap: 16px;
-    flex-wrap: wrap;
-    margin: 15px 0;
+    flex-direction: column;
+    gap: 10px;
 }
 
-.icon {
-    text-align: center;
-    transition: transform 0.2s ease;
+.spec-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding: 8px 12px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 10px;
+    border-left: 3px solid var(--verdigris);
 }
 
-.icon img {
-    width: 74px;
-    height: auto;
-    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.4));
-}
-
-.icon h4 {
+.spec-label {
     font-family: var(--font-rounded);
-    margin: 8px 0 0;
-    font-size: 1.05rem;
-    color: var(--cream-bg);
-}
-
-.icon:hover {
-    transform: scale(1.08);
     color: var(--jasmine);
+    font-size: 0.98rem;
+    white-space: nowrap;
 }
 
-.divisor {
+.spec-val {
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: right;
+}
+
+/* Características Principales con Fotos */
+.grid-features-fotos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 15px;
+}
+
+.feature-foto-card {
+    background: rgba(15, 28, 46, 0.82);
+    border: 2px solid rgba(233, 196, 106, 0.35);
+    border-radius: 18px;
+    overflow: hidden;
+    text-align: left;
+    transition: all 0.25s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-foto-card:hover {
+    border-color: var(--jasmine);
+    transform: translateY(-6px);
+}
+
+.feature-img-box {
+    position: relative;
+    width: 100%;
+    height: 170px;
+    overflow: hidden;
+}
+
+.feature-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.35s ease;
+}
+
+.feature-foto-card:hover .feature-img-box img {
+    transform: scale(1.06);
+}
+
+.feature-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    font-family: var(--font-rounded);
+    font-size: 0.75rem;
+    background: rgba(15, 28, 46, 0.9);
+    color: var(--jasmine);
+    padding: 4px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--jasmine);
+}
+
+.feature-body {
+    padding: 20px;
+}
+
+.feature-body h4 {
+    font-family: var(--font-rounded);
+    color: var(--jasmine);
+    font-size: 1.35rem;
+    margin: 0 0 8px;
+}
+
+.feature-body p {
+    margin: 0;
+    font-size: 1.12rem;
+    color: #f1faee;
+}
+
+/* ==========================================================================
+   CARRUSEL INTERACTIVO DE CAPTURAS POR TIPOLOGÍA
+   ========================================================================== */
+.carrusel-seccion {
+    width: 100%;
+    max-width: 960px;
+    margin-top: 40px;
+    background: rgba(15, 28, 46, 0.82);
+    border: 2px solid rgba(233, 196, 106, 0.4);
+    border-radius: 22px;
+    padding: 30px;
+}
+
+.filtros-capturas {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 18px 0 22px;
+}
+
+.cat-cap-btn {
+    font-family: var(--font-rounded);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--cream-bg);
+    border: 1px solid rgba(233, 196, 106, 0.4);
+    padding: 8px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.cat-cap-btn.active,
+.cat-cap-btn:hover {
+    background: var(--jasmine);
+    color: var(--charcoal-blue);
+    font-weight: bold;
+}
+
+.carrusel-contenedor {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carrusel-viewport {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 3px solid var(--jasmine);
+    background: #09111c;
+}
+
+.carrusel-slide {
+    display: none;
+    position: relative;
+}
+
+.carrusel-slide.active {
+    display: block;
+    animation: fadeSlide 0.35s ease;
+}
+
+@keyframes fadeSlide {
+    from { opacity: 0.3; transform: scale(0.99); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.carrusel-slide img {
+    width: 100%;
+    height: 440px;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+}
+
+.carrusel-caption {
+    background: rgba(15, 28, 46, 0.92);
+    padding: 16px 22px;
+    text-align: left;
+    border-top: 2px solid rgba(233, 196, 106, 0.35);
+}
+
+.cap-badge {
+    font-family: var(--font-rounded);
+    font-size: 0.78rem;
+    background: var(--verdigris);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 999px;
+}
+
+.carrusel-caption h4 {
+    font-family: var(--font-rounded);
+    color: var(--jasmine);
+    margin: 6px 0 0;
+    font-size: 1.3rem;
+}
+
+.carrusel-nav {
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+    background: rgba(15, 28, 46, 0.85);
+    color: var(--jasmine);
+    border: 2px solid var(--jasmine);
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    z-index: 5;
+    transition: all 0.2s ease;
+}
+
+.carrusel-nav:hover {
+    background: var(--burnt-peach);
+    color: #fff;
+    border-color: #fff;
+}
+
+.carrusel-nav.prev { left: 14px; }
+.carrusel-nav.next { right: 14px; }
+
+.carrusel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.dot-indicador {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
     border: none;
-    border-top: 1px solid rgba(255,255,255,0.2);
-    margin: 18px 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dot-indicador.active {
+    background: var(--jasmine);
+    transform: scale(1.25);
 }
 
 /* ==========================================================================
@@ -452,7 +686,6 @@ h1 {
     position: relative;
 }
 
-/* Si más adelante metéis el <iframe> de Itch.io dentro de .marco-juego, se ajustará solo al 100% */
 .marco-juego iframe {
     width: 100%;
     height: 100%;
@@ -468,7 +701,8 @@ h1 {
 }
 
 .placeholder-juego h4 {
-    font-family: var(--font-display);
+    font-family: var(--font-rounded);
+    font-weight: 800;
     font-size: 2rem;
     color: var(--jasmine);
     margin: 5px 0 0;
@@ -480,6 +714,7 @@ h1 {
     margin: 0 0 10px;
     color: var(--cream-bg);
 }
+
 /* ==========================================================================
    SELECTOR DE PERSONAJES CON IMÁGENES PNG REALES
    ========================================================================== */
@@ -572,7 +807,8 @@ h1 {
 }
 
 .ficha-header h2 {
-    font-family: var(--font-display);
+    font-family: var(--font-rounded);
+    font-weight: 800;
     font-size: 2.8rem;
     color: var(--jasmine);
     margin: 0 0 6px;
@@ -649,7 +885,7 @@ h1 {
 }
 
 /* ==========================================================================
-   ARSENAL DE OBJETOS Y CONTROLES
+   ARSENAL DE OBJETOS Y CONTROLES (SIN EMOJIS, CON BADGES PROFESIONALES)
    ========================================================================== */
 .filtros-objetos {
     display: flex;
@@ -668,8 +904,24 @@ h1 {
     color: var(--cream-bg);
     cursor: pointer;
     font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
     transition: all 0.2s ease;
 }
+
+.dot-cat {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.c-pintar     { background-color: var(--verdigris); }
+.c-entorpecer { background-color: var(--sandy-brown); }
+.c-fauna      { background-color: var(--jasmine); }
+.c-clima      { background-color: #5bc0be; }
+.c-aturdir    { background-color: var(--burnt-peach); }
 
 .filtro-btn.active,
 .filtro-btn:hover {
@@ -681,30 +933,41 @@ h1 {
 .grid-objetos {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
     gap: 18px;
 }
 
 .item-card {
-    background: rgba(15, 28, 46, 0.78);
+    background: rgba(15, 28, 46, 0.82);
     border: 1px solid rgba(255,255,255,0.18);
     border-radius: 14px;
     padding: 20px;
-    text-align: center;
+    text-align: left;
     transition: all 0.25s ease;
 }
 
 .item-card:hover {
     transform: translateY(-5px);
     border-color: var(--jasmine);
-    background: rgba(38, 70, 83, 0.9);
+    background: rgba(38, 70, 83, 0.92);
 }
 
-.item-icon {
-    font-size: 2.4rem;
-    display: block;
-    margin-bottom: 8px;
+.item-badge {
+    display: inline-block;
+    font-family: var(--font-rounded);
+    font-size: 0.72rem;
+    padding: 3px 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    letter-spacing: 0.8px;
+    font-weight: bold;
 }
+
+.badge-pintar     { background: rgba(42, 157, 143, 0.25); color: #6fffe9; border: 1px solid var(--verdigris); }
+.badge-entorpecer { background: rgba(244, 162, 97, 0.25); color: var(--jasmine); border: 1px solid var(--sandy-brown); }
+.badge-fauna      { background: rgba(233, 196, 106, 0.25); color: var(--cream-bg); border: 1px solid var(--jasmine); }
+.badge-clima      { background: rgba(91, 192, 190, 0.25); color: #a9def9; border: 1px solid #5bc0be; }
+.badge-aturdir    { background: rgba(231, 111, 81, 0.25); color: #ffadad; border: 1px solid var(--burnt-peach); }
 
 .item-card h4 {
     font-family: var(--font-rounded);
@@ -777,20 +1040,97 @@ h1 {
 
 .tecla-k {
     display: block;
-    font-family: var(--font-display);
-    font-size: 1.5rem;
+    font-family: var(--font-rounded);
+    font-weight: 800;
+    font-size: 1.45rem;
     color: var(--jasmine);
     margin-bottom: 6px;
 }
 
 /* ==========================================================================
-   DEVLOG TIMELINE Y TABLA DE PRECIOS CORREGIDA (SIN SALTO DE LÍNEA EN EL €)
+   DEVLOG EN HILO SECUENCIAL CONECTADO
    ========================================================================== */
-.timeline-devlog {
+.hilo-devlog {
+    position: relative;
     width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-    gap: 24px;
+    max-width: 860px;
+    margin: 20px auto 0;
+    padding-left: 36px;
+    text-align: left;
+}
+
+/* Línea vertical del hilo */
+.hilo-devlog::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    bottom: 10px;
+    left: 19px;
+    width: 4px;
+    background: linear-gradient(180deg, var(--verdigris), var(--jasmine), var(--burnt-peach));
+    border-radius: 4px;
+}
+
+.hilo-nodo {
+    position: relative;
+    margin-bottom: 32px;
+    padding-left: 28px;
+}
+
+.hilo-nodo:last-child {
+    margin-bottom: 0;
+}
+
+.nodo-circulo {
+    position: absolute;
+    left: -35px;
+    top: 18px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--charcoal-blue);
+    border: 3px solid var(--jasmine);
+    color: var(--jasmine);
+    font-family: var(--font-rounded);
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.hilo-nodo.completado .nodo-circulo { background: var(--verdigris); color: #fff; border-color: #fff; }
+.hilo-nodo.en-curso .nodo-circulo   { background: var(--jasmine); color: var(--charcoal-blue); border-color: #fff; }
+.hilo-nodo.proximo .nodo-circulo    { background: var(--burnt-peach); color: #fff; border-color: #fff; }
+
+.nodo-contenido {
+    background: rgba(15, 28, 46, 0.84);
+    border: 2px solid rgba(233, 196, 106, 0.4);
+    border-radius: 18px;
+    padding: 24px 28px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.nodo-contenido:hover {
+    transform: translateX(6px);
+    border-color: var(--jasmine);
+}
+
+.nodo-contenido h3 {
+    font-family: var(--font-rounded);
+    font-weight: 800;
+    color: var(--jasmine);
+    margin: 4px 0 10px;
+    font-size: 1.65rem;
+}
+
+.nodo-contenido p {
+    margin: 0;
+    font-size: 1.18rem;
+    color: #f1faee;
 }
 
 .hito-tag {
@@ -799,7 +1139,7 @@ h1 {
     font-size: 0.8rem;
     padding: 4px 12px;
     border-radius: 999px;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     font-weight: bold;
 }
 
@@ -807,6 +1147,87 @@ h1 {
 .hito-tag.en-curso   { background-color: var(--jasmine); color: var(--charcoal-blue); }
 .hito-tag.proximo    { background-color: var(--burnt-peach); color: #fff; }
 
+/* ==========================================================================
+   GRÁFICA DE SIMILITUD Y MATRIZ COMPARATIVA (MARKETING)
+   ========================================================================== */
+.texto-corto-mkt {
+    margin-top: 0;
+    margin-bottom: 14px;
+}
+
+.grafica-similitud {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.sim-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+}
+
+.sim-label strong {
+    color: var(--jasmine);
+    font-family: var(--font-rounded);
+}
+
+.sim-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.sim-fill {
+    height: 100%;
+    border-radius: 999px;
+}
+
+.c-teal-bg   { background: var(--verdigris); }
+.c-gold-bg   { background: var(--jasmine); }
+.c-orange-bg { background: var(--burnt-peach); }
+
+.matriz-comparativa {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(233, 196, 106, 0.3);
+    font-size: 0.98rem;
+}
+
+.matriz-header,
+.matriz-row {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    padding: 8px 12px;
+    align-items: center;
+}
+
+.matriz-header {
+    background: rgba(38, 70, 83, 0.9);
+    font-family: var(--font-rounded);
+    color: var(--jasmine);
+    font-size: 0.9rem;
+}
+
+.matriz-row {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.matriz-row .ok {
+    color: #6fffe9;
+    font-weight: bold;
+}
+
+.matriz-row .ko {
+    color: #ffadad;
+}
+
+/* Tabla de Precios */
 .tabla-precios {
     margin-top: 16px;
     display: flex;
@@ -839,7 +1260,7 @@ h1 {
     padding: 6px 14px;
     border-radius: 999px;
     font-size: 1.15rem;
-    white-space: nowrap; /* Impide que el símbolo € salte nunca a otra línea */
+    white-space: nowrap;
     flex-shrink: 0;
 }
 
@@ -858,7 +1279,7 @@ h1 {
 
 .grid-embeds {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 28px;
     margin-top: 24px;
 }
@@ -913,32 +1334,8 @@ h1 {
 }
 
 /* ==========================================================================
-   GALERÍA Y LIGHTBOX POPUP
+   LIGHTBOX POPUP
    ========================================================================== */
-.galeria-capturas {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    flex-wrap: wrap;
-    margin-top: 20px;
-}
-
-.galeria-capturas img {
-    width: 340px;
-    height: 195px;
-    object-fit: cover;
-    border-radius: 14px;
-    cursor: pointer;
-    border: 3px solid var(--jasmine);
-    transition: all 0.25s ease;
-}
-
-.galeria-capturas img:hover {
-    transform: scale(1.06) translateY(-5px);
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.6);
-    border-color: var(--burnt-peach);
-}
-
 #fondo-popup {
     position: fixed;
     inset: 0;
@@ -990,7 +1387,7 @@ h1 {
     max-width: 1080px;
     margin: 0 auto 50px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 arriba y 3 abajo simétricos */
+    grid-template-columns: repeat(3, 1fr);
     gap: 28px;
     justify-items: center;
 }
@@ -1048,7 +1445,7 @@ h1 {
 }
 
 /* ==========================================================================
-   FORMULARIO DE CONTACTO Y PLAYTESTING (FOOTER)
+   FORMULARIO DE CONTACTO Y PLAYTESTING (CORREGIDO DESBORDAMIENTO EN MÓVIL)
    ========================================================================== */
 .form-split {
     width: 100%;
@@ -1065,9 +1462,10 @@ h1 {
 
 .form-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
     margin-bottom: 18px;
+    width: 100%;
 }
 
 .form-grupo {
@@ -1075,6 +1473,8 @@ h1 {
     flex-direction: column;
     gap: 7px;
     margin-bottom: 16px;
+    width: 100%;
+    min-width: 0; /* Impide que cualquier input desborde la columna en móviles */
 }
 
 .form-grupo label {
@@ -1087,6 +1487,9 @@ h1 {
 .form-grupo input[type="email"],
 .form-grupo select,
 .form-grupo textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
     font-family: var(--font-body);
     font-size: 1.15rem;
     padding: 12px 15px;
@@ -1140,6 +1543,7 @@ h1 {
     border-radius: 14px;
     cursor: pointer;
     transition: all 0.25s ease;
+    max-width: 100%;
 }
 
 .btn-enviar-form:hover {
@@ -1163,15 +1567,6 @@ h1 {
     display: none;
 }
 
-@media screen and (max-width: 768px) {
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-    .form-split {
-        padding: 22px 18px;
-    }
-}
-
 /* ==========================================================================
    FOOTER Y CONTACTO
    ========================================================================== */
@@ -1184,7 +1579,8 @@ footer {
 }
 
 footer h2 {
-    font-family: var(--font-display);
+    font-family: var(--font-rounded);
+    font-weight: 800;
     color: var(--jasmine);
     font-size: 2.4rem;
     margin: 0 0 10px;
@@ -1207,6 +1603,7 @@ footer h2 {
     margin-bottom: 25px;
     flex-wrap: wrap;
     justify-content: center;
+    max-width: 100%;
 }
 
 .btn-copiar {
@@ -1249,7 +1646,6 @@ footer .links img:hover {
     color: rgba(255,255,255,0.6);
 }
 
-/* Estilo para el texto de carga del widget de X (Twitter) */
 .twitter-wrapper a.twitter-timeline {
     color: var(--jasmine);
     text-decoration: none;
@@ -1261,7 +1657,7 @@ footer .links img:hover {
 }
 
 /* ==========================================================================
-   ANIMACIONES SCROLL REVEAL Y RESPONSIVE
+   ANIMACIONES SCROLL REVEAL Y RESPONSIVE MÓVIL
    ========================================================================== */
 .revelar {
     opacity: 0;
@@ -1285,7 +1681,6 @@ footer .links img:hover {
         width: 100%;
         background-color: rgba(244, 239, 201, 0.98);
         backdrop-filter: blur(10px);
-        /* Cuadrícula compacta de 2 columnas para que no ocupe toda la pantalla */
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 10px 14px;
@@ -1296,12 +1691,10 @@ footer .links img:hover {
         transition: clip-path 0.25s ease-in-out;
     }
 
-    /* ¡ESTA REGLA ES VITAL PARA QUE SE ABRA EL MENÚ AL HACER CLIC! */
     header nav.active {
         clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     }
 
-    /* Cajitas ordenadas para cada botón en móvil/pantalla dividida */
     header nav .btn-navigation {
         text-align: center;
         width: 100%;
@@ -1329,5 +1722,46 @@ footer .links img:hover {
     section {
         padding: 70px 20px;
         background-attachment: scroll;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* Solución al logo con fondo en móvil: oculta el vídeo WebM y muestra el PNG transparente */
+    .solo-desktop {
+        display: none !important;
+    }
+    .solo-movil {
+        display: block !important;
+    }
+
+    .carrusel-slide img {
+        height: 240px;
+    }
+
+    .carrusel-seccion {
+        padding: 20px 14px;
+    }
+
+    .spec-row {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .spec-val {
+        text-align: left;
+    }
+
+    /* Solución a las casillas del formulario en móvil */
+    footer {
+        padding: 60px 16px 35px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-split {
+        padding: 20px 14px;
+        width: 100%;
     }
 }

@@ -6,7 +6,7 @@ const scrollProgress = document.getElementById('scroll-progress');
 const menuToggle = document.getElementById('mobile-menu');
 const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.btn-navigation');
-const sections = document.querySelectorAll('section[id]');
+const sections = document.querySelectorAll('section[id], footer[id]');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 60) {
@@ -22,12 +22,17 @@ window.addEventListener('scroll', () => {
     scrollProgress.style.width = `${porcentaje}%`;
 
     let seccionActual = '';
-    sections.forEach(sec => {
-        const top = sec.offsetTop - 160;
-        if (window.scrollY >= top) {
-            seccionActual = sec.getAttribute('id');
-        }
-    });
+    if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 40) {
+        seccionActual = 'contacto';
+    } else {
+        sections.forEach(sec => {
+            const top = sec.offsetTop - 180;
+            if (window.scrollY >= top) {
+                seccionActual = sec.getAttribute('id');
+            }
+        });
+    }
+
     navLinks.forEach(link => {
         link.classList.toggle('activo', link.getAttribute('href') === `#${seccionActual}`);
     });
@@ -44,7 +49,70 @@ navLinks.forEach(link => {
 });
 
 // ==========================================================================
-// 2. SELECTOR DE LOS 4 PERSONAJES CON SUS PNG DE assets/images/characters/
+// 2. CARRUSEL INTERACTIVO DE CAPTURAS CON FILTRO POR TIPOLOGÍA
+// ==========================================================================
+const todasLasSlides = Array.from(document.querySelectorAll('.carrusel-slide'));
+const botonesCatCap = document.querySelectorAll('.cat-cap-btn');
+const btnPrev = document.getElementById('carrusel-prev');
+const btnNext = document.getElementById('carrusel-next');
+const contenedorDots = document.getElementById('carrusel-dots');
+
+let slidesFiltradas = [...todasLasSlides];
+let indiceSlideActual = 0;
+
+function renderizarCarrusel() {
+    todasLasSlides.forEach(s => s.classList.remove('active'));
+    if (slidesFiltradas.length === 0) return;
+
+    if (indiceSlideActual >= slidesFiltradas.length) indiceSlideActual = 0;
+    if (indiceSlideActual < 0) indiceSlideActual = slidesFiltradas.length - 1;
+
+    slidesFiltradas[indiceSlideActual].classList.add('active');
+
+    // Crear puntos indicadores
+    contenedorDots.innerHTML = '';
+    slidesFiltradas.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.className = `dot-indicador ${idx === indiceSlideActual ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Ir a captura ${idx + 1}`);
+        dot.addEventListener('click', () => {
+            indiceSlideActual = idx;
+            renderizarCarrusel();
+        });
+        contenedorDots.appendChild(dot);
+    });
+}
+
+botonesCatCap.forEach(btn => {
+    btn.addEventListener('click', () => {
+        botonesCatCap.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const cat = btn.dataset.catcap;
+        slidesFiltradas = cat === 'todas'
+            ? [...todasLasSlides]
+            : todasLasSlides.filter(s => s.dataset.catcap === cat);
+
+        indiceSlideActual = 0;
+        renderizarCarrusel();
+    });
+});
+
+if (btnPrev && btnNext) {
+    btnPrev.addEventListener('click', () => {
+        indiceSlideActual--;
+        renderizarCarrusel();
+    });
+    btnNext.addEventListener('click', () => {
+        indiceSlideActual++;
+        renderizarCarrusel();
+    });
+}
+
+renderizarCarrusel();
+
+// ==========================================================================
+// 3. SELECTOR DE LOS 4 PERSONAJES CON SUS PNG DE assets/images/characters/
 // ==========================================================================
 const datosPersonajes = {
     bubble: {
@@ -73,7 +141,7 @@ const datosPersonajes = {
         especialT: 'Dash N\' Splash',
         especialD: 'Impulso veloz hacia delante que pinta por donde pasa y culmina con un estallido de pintura y daño en área.',
         ultiT: 'Instinto Salvaje',
-        ultiD: 'Transformación temporal que potencia drásticamente la velocidad y el alcance sus habilidades.'
+        ultiD: 'Transformación temporal que potencia drásticamente la velocidad y el alcance de sus habilidades.'
     },
     tuqui: {
         img: 'assets/images/characters/tuqui.png',
@@ -104,7 +172,7 @@ const datosPersonajes = {
         ultiD: 'Invierte los controles del rival y reduce tanto su velocidad como la recarga de sus habilidades.'
     }
 };
-//la magia para cambiar lo de la ficha del personaje
+
 document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
@@ -131,7 +199,7 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 });
 
 // ==========================================================================
-// 3. FILTRO DINÁMICO DE OBJETOS DEL ARSENAL
+// 4. FILTRO DINÁMICO DE OBJETOS DEL ARSENAL
 // ==========================================================================
 const botonesFiltro = document.querySelectorAll('.filtro-btn');
 const tarjetasObjeto = document.querySelectorAll('.item-card');
@@ -149,8 +217,7 @@ botonesFiltro.forEach(btn => {
 });
 
 // ==========================================================================
-// 4. ESQUEMAS DE CONTROL (WASD / ARROWS / GAMEPAD)
-//segun lo que eliga, se pone unos datos u otros (por defecto están el wasd)
+// 5. ESQUEMAS DE CONTROL (WASD / ARROWS / GAMEPAD)
 // ==========================================================================
 const esquemasControl = {
     wasd:    { mov: 'W A S D', bas: 'Tecla F', esp: 'Tecla G', ult: 'Tecla H', pau: 'Espacio' },
@@ -173,7 +240,7 @@ document.querySelectorAll('.esquema-btn').forEach(btn => {
 });
 
 // ==========================================================================
-// 5. LIGHTBOX POPUP DE GALERÍA
+// 6. LIGHTBOX POPUP DE GALERÍA
 // ==========================================================================
 const fondoPopup = document.getElementById('fondo-popup');
 const imagenPopup = document.getElementById('imagen-popup');
@@ -197,7 +264,7 @@ window.addEventListener('keydown', (e) => {
 });
 
 // ==========================================================================
-// 6. SCROLL REVEAL + TILT 3D + COPIAR EMAIL
+// 7. SCROLL REVEAL + TILT 3D + COPIAR EMAIL
 // ==========================================================================
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -224,12 +291,12 @@ document.querySelectorAll('.tilt-card').forEach(card => {
 const btnCopiar = document.getElementById('btn-copiar-email');
 btnCopiar.addEventListener('click', () => {
     navigator.clipboard.writeText('slipteamdev@gmail.com');
-    btnCopiar.textContent = '✅ ¡Copiado!';
-    setTimeout(() => { btnCopiar.textContent = '📋 Copiar correo'; }, 2000);
+    btnCopiar.textContent = '¡Copiado!';
+    setTimeout(() => { btnCopiar.textContent = 'Copiar correo'; }, 2000);
 });
 
 // ==========================================================================
-// 7. FORMULARIO INTERACTIVO DE PLAYTESTING Y FEEDBACK (CON LOCALSTORAGE)
+// 8. FORMULARIO INTERACTIVO DE PLAYTESTING Y FEEDBACK (CON LOCALSTORAGE)
 // ==========================================================================
 const inputHype = document.getElementById('nota-hype');
 const outputHype = document.getElementById('valor-hype');
@@ -239,11 +306,11 @@ const respuestaForm = document.getElementById('respuesta-form');
 if (inputHype && outputHype) {
     inputHype.addEventListener('input', () => {
         const v = Number(inputHype.value);
-        let emoji = '🔥 ¡Puro Caos!';
-        if (v <= 4) emoji = '🌱 Puede mejorar';
-        else if (v <= 7) emoji = '🎮 ¡Muy entretenido!';
-        else if (v <= 9) emoji = '⚡ ¡Súper frenético!';
-        outputHype.textContent = `${v} / 10 ${emoji}`;
+        let textoNivel = '— ¡Puro Caos!';
+        if (v <= 4) textoNivel = '— Puede mejorar';
+        else if (v <= 7) textoNivel = '— ¡Muy entretenido!';
+        else if (v <= 9) textoNivel = '— ¡Súper frenético!';
+        outputHype.textContent = `${v} / 10 ${textoNivel}`;
     });
 }
 
@@ -258,19 +325,17 @@ if (formContacto) {
         const hype = inputHype ? inputHype.value : '10';
         const mensaje = document.getElementById('mensaje-usuario').value.trim();
 
-        // Guardamos en localStorage para demostrar uso de API Web Storage de HTML5
         const registro = { nombre, email, motivo, campeon, hype, mensaje, fecha: new Date().toLocaleDateString() };
         localStorage.setItem('slipteam_ultimo_feedback', JSON.stringify(registro));
 
-        // Mostramos confirmación interactiva sin recargar la página
         respuestaForm.classList.remove('oculto');
         respuestaForm.innerHTML = `
-            <strong>✅ ¡Gracias por tu mensaje, ${nombre}!</strong><br>
+            <strong>¡Gracias por tu mensaje, ${nombre}!</strong><br>
             Hemos registrado tu <em>${motivo}</em> (Campeón: <strong>${campeon}</strong> · Valoración: <strong>${hype}/10</strong>).<br>
             <small>También puedes <a href="mailto:slipteamdev@gmail.com?subject=${encodeURIComponent(motivo + ' - ' + nombre)}&body=${encodeURIComponent('Campeón favorito: ' + campeon + '\nValoración: ' + hype + '/10\n\nMensaje:\n' + mensaje)}" style="color: #E9C46A; font-weight: bold;">hacer clic aquí para enviarlo directamente desde tu gestor de correo</a>.</small>
         `;
 
         formContacto.reset();
-        outputHype.textContent = '10 / 10 🔥 ¡Puro Caos!';
+        outputHype.textContent = '10 / 10 — ¡Puro Caos!';
     });
 }
