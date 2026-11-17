@@ -66,47 +66,41 @@
             <h1 class="revelar">Split Lands</h1>
             <p class="lead-seccion revelar">Una misteriosa energía ha alterado las fronteras del planeta. ¡Expande tu hábitat antes de que se agote el tiempo!</p>
 
-            <!--PITCH  + FICHA TÉCNICA -->
-            <div class="contenedor-tarjetas">
-                <article class="tarjeta tilt-card revelar">
-                    <div class="badge-tarjeta">EL CONCEPTO</div>
-                    <h3>Pitch</h3>
-                    <p><strong>Split Lands</strong> es un frenético <em>party game</em> competitivo 2D en vista <em>top-down</em> para 2 jugadores locales. El escenario comienza dividido entre dos biomas rivales separados.</p>
-                    <p><strong>Objetivo:</strong> Pintar y conquistar el <strong>90% del mapa</strong> antes de que acaben los <strong>3 minutos</strong> combinando tus 3 habilidades con los objetos que suelta la fauna salvaje.</p>
-                </article>
+            <!-- ZONA DE DEMO JUGABLE -->
+            <div id="demo" class="demo-container revelar">
+                <span class="badge-tarjeta">VERSIÓN BETA</span>
+                <h3 class="subtitulo" style="margin-top: 10px;">¡Juega la Demo de Split Lands!</h3>
+                <p>Prueba nuestra versión jugable directamente en el navegador o desde nuestra página oficial de Itch.io.</p>
 
-                <article class="tarjeta tilt-card revelar">
-                    <div class="badge-tarjeta">ESPECIFICACIONES</div>
-                    <h3>Ficha Técnica</h3>
-                    <div class="ficha-tecnica-tabla">
-                        <div class="spec-row">
-                            <span class="spec-label">Título y Género</span>
-                            <span class="spec-val">Split Lands · Party Game / Arcade Competitivo 2D</span>
-                        </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Motor y Lenguaje</span>
-                            <span class="spec-val">Unity Engine (2D URP) · Programación en C#</span>
-                        </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Arquitectura e IA</span>
-                            <span class="spec-val">Modular · Máquinas de Estados Finitos (FSM)</span>
-                        </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Jugadores y Cámara</span>
-                            <span class="spec-val">2 Jugadores Local (1v1) · Pantalla Única Top-Down</span>
-                        </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Rendimiento Objetivo</span>
-                            <span class="spec-val">1920x1080p · 60 FPS estables en WebGL y PC</span>
-                        </div>
-                        <div class="spec-row">
-                            <span class="spec-label">Plataformas</span>
-                            <span class="spec-val">Web (Itch.io HTML5), PC Windows y Nintendo Switch</span>
-                        </div>
+                <!-- Ventana del juego -->
+                <div class="marco-juego">
+                    <div class="placeholder-juego">
+                        <img src="assets/images/logos/pfp.png" alt="Split Lands Logo" width="90">
+                        <h4>Split Lands</h4>
+                        <p>Disponible para 2 jugadores en un mismo teclado (WASD + Flechas) o con mandos.</p>
                     </div>
-                </article>
+                </div>
+            <br>
+            <a href="https://slipteam.itch.io" target="_blank" rel="noopener" class="btn-demo">▶ JUGAR AHORA EN ITCH.IO</a>
             </div>
-
+            <!-- Esquema de Controles -->
+            <div class="panel-controles revelar">
+                <h3>Esquemas de Control Accesibles</h3>
+                <p>El juego detecta automáticamente si hay mandos conectados. Además, en teclado <strong>invertimos el orden de teclas en Arrows</strong> respecto a WASD para que ambos jugadores utilicen exactamente los mismos dedos de la mano.</p>
+                <div class="selector-esquema">
+                    <button class="esquema-btn active" data-esquema="wasd">Jugador Teclado (WASD)</button>
+                    <button class="esquema-btn" data-esquema="arrows">Jugador Teclado (Arrows)</button>
+                    <button class="esquema-btn" data-esquema="gamepad">Mando (Gamepad)</button>
+                </div>
+                <div class="mapa-teclas" id="mapa-teclas">
+                    <div class="tecla-box"><span class="tecla-k" id="ctrl-mov">W A S D</span><small>Movimiento</small></div>
+                    <div class="tecla-box"><span class="tecla-k" id="ctrl-bas">Tecla F</span><small>Básica / Coger y Lanzar Objeto</small></div>
+                    <div class="tecla-box"><span class="tecla-k" id="ctrl-esp">Tecla G</span><small>Habilidad Especial</small></div>
+                    <div class="tecla-box"><span class="tecla-k" id="ctrl-ult">Tecla H</span><small>Habilidad Definitiva (Ulti)</small></div>
+                    <div class="tecla-box"><span class="tecla-k" id="ctrl-pau">Espacio</span><small>Pausa Común</small></div>
+                </div>
+            </div>
+            
             <!-- CARACTERÍSTICAS PRINCIPALES CON FOTOS -->
             <h3 class="subtitulo revelar">Características Principales</h3>
             <div class="grid-features-fotos revelar">
@@ -204,24 +198,48 @@
                 <div class="carrusel-dots" id="carrusel-dots"></div>
             </div>
 
-            <!-- ZONA DE DEMO JUGABLE -->
-            <div id="demo" class="demo-container revelar">
-                <span class="badge-tarjeta">VERSIÓN BETA</span>
-                <h3 class="subtitulo" style="margin-top: 10px;">¡Juega la Demo de Split Lands!</h3>
-                <p>Prueba nuestra versión jugable directamente en el navegador o desde nuestra página oficial de Itch.io.</p>
+            <!--PITCH  + FICHA TÉCNICA -->
+            <div class="contenedor-tarjetas">
+                <article class="tarjeta tilt-card revelar">
+                    <div class="badge-tarjeta">EL CONCEPTO</div>
+                    <h3>Pitch</h3>
+                    <p><strong>Split Lands</strong> es un frenético <em>party game</em> competitivo 2D en vista <em>top-down</em> para 2 jugadores locales. El escenario comienza dividido entre dos biomas rivales separados.</p>
+                    <p><strong>Objetivo:</strong> Pintar y conquistar el <strong>90% del mapa</strong> antes de que acaben los <strong>3 minutos</strong> combinando tus 3 habilidades con los objetos que suelta la fauna salvaje.</p>
+                </article>
 
-                <!-- Ventana del juego -->
-                <div class="marco-juego">
-                    <div class="placeholder-juego">
-                        <img src="assets/images/logos/pfp.png" alt="Split Lands Logo" width="90">
-                        <h4>Split Lands</h4>
-                        <p>Disponible para 2 jugadores en un mismo teclado (WASD + Flechas) o con mandos.</p>
+                <article class="tarjeta tilt-card revelar">
+                    <div class="badge-tarjeta">ESPECIFICACIONES</div>
+                    <h3>Ficha Técnica</h3>
+                    <div class="ficha-tecnica-tabla">
+                        <div class="spec-row">
+                            <span class="spec-label">Título y Género</span>
+                            <span class="spec-val">Split Lands · Party Game / Arcade Competitivo 2D</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Motor y Lenguaje</span>
+                            <span class="spec-val">Unity Engine (2D URP) · Programación en C#</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Arquitectura e IA</span>
+                            <span class="spec-val">Modular · Máquinas de Estados Finitos (FSM)</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Jugadores y Cámara</span>
+                            <span class="spec-val">2 Jugadores Local (1v1) · Pantalla Única Top-Down</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Rendimiento Objetivo</span>
+                            <span class="spec-val">1920x1080p · 60 FPS estables en WebGL y PC</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Plataformas</span>
+                            <span class="spec-val">Web (Itch.io HTML5), PC Windows y Nintendo Switch</span>
+                        </div>
                     </div>
-                </div>
-            <br>
-            <a href="https://slipteam.itch.io" target="_blank" rel="noopener" class="btn-demo">▶ JUGAR AHORA EN ITCH.IO</a>
+                </article>
             </div>
         </div>
+        
     </section>
 
     <!-- 3. PERSONAJES INTERACTIVOS -->
@@ -299,7 +317,7 @@
         </div>
     </section>
 
-    <!-- 4. OBJETOS Y CONTROLES -->
+    <!-- 4. OBJETOS -->
     <section id="arsenal" class="seccion-oscura" style="background-image: url('assets/images/backgrounds/jungle.jpg');">
         <div class="seccion-overlay"></div>
         <div class="contenedor-seccion">
@@ -421,23 +439,7 @@
                 </div>
             </div>
 
-            <!-- Esquema de Controles -->
-            <div class="panel-controles revelar">
-                <h3>Esquemas de Control Accesibles</h3>
-                <p>El juego detecta automáticamente si hay mandos conectados. Además, en teclado <strong>invertimos el orden de teclas en Arrows</strong> respecto a WASD para que ambos jugadores utilicen exactamente los mismos dedos de la mano.</p>
-                <div class="selector-esquema">
-                    <button class="esquema-btn active" data-esquema="wasd">Jugador Teclado (WASD)</button>
-                    <button class="esquema-btn" data-esquema="arrows">Jugador Teclado (Arrows)</button>
-                    <button class="esquema-btn" data-esquema="gamepad">Mando (Gamepad)</button>
-                </div>
-                <div class="mapa-teclas" id="mapa-teclas">
-                    <div class="tecla-box"><span class="tecla-k" id="ctrl-mov">W A S D</span><small>Movimiento</small></div>
-                    <div class="tecla-box"><span class="tecla-k" id="ctrl-bas">Tecla F</span><small>Básica / Coger y Lanzar Objeto</small></div>
-                    <div class="tecla-box"><span class="tecla-k" id="ctrl-esp">Tecla G</span><small>Habilidad Especial</small></div>
-                    <div class="tecla-box"><span class="tecla-k" id="ctrl-ult">Tecla H</span><small>Habilidad Definitiva (Ulti)</small></div>
-                    <div class="tecla-box"><span class="tecla-k" id="ctrl-pau">Espacio</span><small>Pausa Común</small></div>
-                </div>
-            </div>
+            
         </div>
     </section>
 
@@ -620,26 +622,9 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- 7. ASPECTOS TÉCNICOS Y RESULTADOS -->
-    <section id="tecnico-resultados" class="seccion-clara" style="background-image: url('assets/images/backgrounds/forest.jpg');">
-        <div class="seccion-overlay clara"></div>
-        <div class="contenedor-seccion">
-            <h1 class="revelar">Aspectos Técnicos y Resultados</h1>
-
             <div class="contenedor-tarjetas">
-                <article class="tarjeta tilt-card revelar">
-                    <div class="badge-tarjeta">INGENIERÍA Y ARTE</div>
-                    <h3>Arquitectura y Producción</h3>
-                    <ul class="lista-features">
-                        <li><strong>Programación en Unity:</strong> Arquitectura modular desacoplada en sistemas de Controles, Habilidades y Controladores de Objetos, junto a máquinas de estados para la IA de los animales repartidores.</li>
-                        <li><strong>Arte 2D y Animación:</strong> Ilustración original con lineart expresivo, <em>turnarounds</em> de referencia y ciclos de animación dibujados a mano de 6 frames.</li>
-                        <li><strong>Diseño Sonoro Dinámico:</strong> BSO que acelera su tempo en los últimos 30 segundos de partida, acompañada de 4 capas de SFX para feedback instantáneo.</li>
-                    </ul>
-                </article>
-
+                <br>
+                <h1 class="revelar">Nuestros Resultados y Feedback</h1>
                 <article class="tarjeta tilt-card revelar">
                     <div class="badge-tarjeta">QA Y MÉTRICAS</div>
                     <h3>Resultados y Feedback</h3>
@@ -653,8 +638,9 @@
         </div>
     </section>
 
-    <!-- 8. SOBRE NOSOTROS -->
-    <section id="estudio" class="seccion-oscura" style="background-image: url('assets/images/backgrounds/beach.png');">
+
+    <!-- 7. SOBRE NOSOTROS -->
+    <section id="estudio" class="seccion-clara" style="background-image: url('assets/images/backgrounds/forest.jpg');">
         <div class="seccion-overlay"></div>
         <div class="contenedor-seccion">
             <h1 class="revelar">Sobre Nosotros · Slip Team</h1>
@@ -726,7 +712,7 @@
         <p id="texto-popup"></p>
     </div>
 
-    <!-- 9. CONTACTO Y REDES SOCIALES (Obligatorio) -->
+    <!-- 8. CONTACTO Y REDES SOCIALES (Obligatorio) -->
     <footer id="contacto">
         <div class="contenedor-seccion">
             <h2 class="revelar">Contacto, Feedback y Redes Sociales</h2>
