@@ -221,7 +221,7 @@ botonesFiltro.forEach(btn => {
 // ==========================================================================
 const esquemasControl = {
     wasd:    { mov: 'W A S D', bas: 'Tecla F', esp: 'Tecla G', ult: 'Tecla H', pau: 'Espacio' },
-    arrows:  { mov: 'Flechas ↑↓←→', bas: 'Tecla - (Guion)', esp: 'Tecla . (Punto)', ult: 'Tecla , (Coma)', pau: 'Espacio' },
+    arrows:  { mov: 'Flechas ↑↓←→', bas: 'Tecla Ñ', esp: 'Tecla L', ult: 'Tecla K', pau: 'Espacio' },
     gamepad: { mov: 'Joystick Izq.', bas: 'Botón Izquierdo', esp: 'Botón Inferior', ult: 'Botón Superior', pau: 'Botón Start' }
 };
 
