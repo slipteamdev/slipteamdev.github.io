@@ -662,7 +662,7 @@ h1 {
    ========================================================================== */
 .demo-container {
     width: 100%;
-    max-width: 960px;
+    max-width: 1040px;
     margin: 55px auto 20px;
     background: rgba(15, 28, 46, 0.88);
     border: 3px solid var(--jasmine);
@@ -674,7 +674,7 @@ h1 {
 
 .marco-juego {
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 960 / 580;
     background: radial-gradient(circle, rgba(38, 70, 83, 0.9) 0%, rgba(15, 28, 46, 0.98) 100%);
     border: 3px dashed rgba(233, 196, 106, 0.6);
     border-radius: 16px;
