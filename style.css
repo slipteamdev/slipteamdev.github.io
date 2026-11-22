@@ -662,19 +662,20 @@ h1 {
    ========================================================================== */
 .demo-container {
     width: 100%;
-    max-width: 1040px;
+    max-width: 1150px;
     margin: 55px auto 20px;
     background: rgba(15, 28, 46, 0.88);
     border: 3px solid var(--jasmine);
     border-radius: 22px;
-    padding: 36px;
+    padding: 24px 20px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
     text-align: center;
 }
 
 .marco-juego {
     width: 100%;
-    aspect-ratio: 960 / 580;
+    aspect-ratio: 16 / 10;
+    min-height: 600px;
     background: radial-gradient(circle, rgba(38, 70, 83, 0.9) 0%, rgba(15, 28, 46, 0.98) 100%);
     border: 3px dashed rgba(233, 196, 106, 0.6);
     border-radius: 16px;
